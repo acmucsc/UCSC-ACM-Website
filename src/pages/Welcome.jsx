@@ -1,8 +1,12 @@
 import ScrollingCarousel from "../components/ScrollingCarousel"
+import Navbar from "../components/Navbar/Navbar"
 
 const Welcome = () => {
   return (
-    <ScrollingCarousel/>
+    <div>
+        <Navbar/>
+        <ScrollingCarousel/>
+    </div>
   )
 }
 

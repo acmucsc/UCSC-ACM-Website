@@ -1,0 +1,78 @@
+.acm-about {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.acm-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-left: 10%;
+}
+
+.acm-title h1{
+    font-size: 60px;
+}
+
+.acm-title p{
+    font-style: italic;
+    font-size: 30px;
+    width: 40%;
+}
+
+.bio-button {
+    background-color: #008DD0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 3%;
+    width: 15%;
+    height: 100%;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.acm-bio {
+    text-align: center;
+}
+
+.acm-bio h2{
+    margin-top: 6%;
+    padding-bottom: 1%;
+    font-size: 40px;
+}
+
+.acm-bio p{
+    width: 58%;
+    height: 58%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+.acm-communities h2 {
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 30px;
+    color: #0D99FF;
+}
+
+.communities-grid {
+    margin-top: 2%;
+    margin-bottom: 8%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: -50px;
+    row-gap: 20px;
+    padding: 0;
+    text-align: center;
+    font-size: 20px;
+    display: grid;
+}
+
+

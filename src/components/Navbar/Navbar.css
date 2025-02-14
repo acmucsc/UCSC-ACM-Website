@@ -1,3 +1,63 @@
+:root {
+    --blue: #008DD0;
+    --blue-hover: #0075ac;
+    --white: #ffffff;
+    --black: #000000;
+    font-size: 62.5%;
+}
+body {
+    background-color: var(--white);
+}
+body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(../public/img/linkedin-color.webp) url(../public/img/github-color.webp) url(../public/img/instagram-color.webp) url(../public/img/discord-color.webp); /*change when adding icons*/
+}
+.wrapper-main {
+    width: 1100px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2.6rem;
+    line-height: 1.5;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+h2 {
+    font-size: 2.6rem;
+    line-height: 1.5;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+h3 {
+    font-size: 2.6rem;
+    line-height: 1.5;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+p {
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
 .header-container {
     height: 80px;
 }

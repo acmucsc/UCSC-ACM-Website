@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@font-face { /*to download a font*/
+    font-family: Roboto;
+    src: url(../public/fonts/Roboto-Black.ttf) url(../public/fonts/Roboto-BlackItalic.ttf) url(../public/fonts/Roboto-Bold.ttf) url(../public/fonts/Roboto-BoldItalic.ttf) url(../public/fonts/Roboto-Italic.ttf) url(../public/fonts/Roboto-Light.ttf) url(../public/fonts/Roboto-LightItalic.ttf) url(../public/fonts/Roboto-Medium.ttf) url(../public/fonts/Roboto-MediumItalic.ttf) url(../public/fonts/Roboto-Regular.ttf) url(../public/fonts/Roboto-Thin.ttf) url(../public/fonts/Roboto-ThinItalic.ttf);
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

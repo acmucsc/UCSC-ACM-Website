@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
-    background-color: #f8f8f8;
+    background-color: white;
+    margin-bottom: 10%;
+    height:100%;
 }
 
 .acm-title {
@@ -13,12 +15,12 @@
 }
 
 .acm-title h1{
-    font-size: 60px;
+    font-size: 6rem;
 }
 
 .acm-title p{
     font-style: italic;
-    font-size: 30px;
+    font-size: 3rem;
     width: 40%;
 }
 
@@ -32,7 +34,7 @@
     width: 15%;
     height: 100%;
     flex-shrink: 0;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
@@ -43,14 +45,14 @@
 .acm-bio h2{
     margin-top: 6%;
     padding-bottom: 1%;
-    font-size: 40px;
+    font-size: 4rem;
 }
 
 .acm-bio p{
     width: 58%;
     height: 58%;
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
     margin: 0 auto;
 }
@@ -58,12 +60,12 @@
 .acm-communities h2 {
     margin-top: 5%;
     margin-left: 10%;
-    font-size: 30px;
+    font-size: 3rem;
     color: #0D99FF;
 }
 
 .communities-grid {
-    margin-top: 2%;
+    margin-top: 4%;
     margin-bottom: 8%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -71,8 +73,154 @@
     row-gap: 20px;
     padding: 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
     display: grid;
+    row-gap: 50%;
 }
 
+.communities-grid .hack-logo{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    background: #7570A0;
+    /* transform: rotate(-45deg);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: -6.5%;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
+.communities-grid .learn-logo{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    background: #FBBD48;
+    /* transform: rotate(-45deg);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 31%;
+    margin-top: -6.5%;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.communities-grid .alumni-logo{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    background: #7EA58C;
+    /* transform: rotate(-45deg);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: -6.5%;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.communities-grid .dev-logo{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    background: #F3885C;
+    /* transform: rotate(-45deg);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 31%;
+    margin-top: -6.5%;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.communities-grid .research-logo{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 20%;
+    background: #EA5270;
+    /* transform: rotate(-45deg);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: -6.5%;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.communities-grid li:nth-child(5) p{
+    margin-left: 5%;
+    font-size: 2rem;
+}
+
+.communities-grid li:nth-child(4) p{
+    margin-left: -3%;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .acm-title h1 {
+        font-size: 4rem;
+    }
+
+    .acm-title p {
+        font-size: 2rem;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .bio-button {
+        width: 80%;
+        font-size: 1.5rem;
+    }
+
+    .acm-bio h2 {
+        font-size: 3rem;
+    }
+
+    .acm-bio p {
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .acm-communities h2 {
+        font-size: 2.5rem;
+    }
+
+    .communities-grid {
+        grid-template-columns: 1fr;
+        row-gap: 20px; 
+    }
+
+    .communities-grid li p {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+
+    .communities-grid .hack-logo,
+    .communities-grid .learn-logo,
+    .communities-grid .alumni-logo,
+    .communities-grid .dev-logo,
+    .communities-grid .research-logo {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.2rem;
+        margin-left: 15%;
+        margin-bottom: 4%;       
+    }
+}

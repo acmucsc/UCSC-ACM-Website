@@ -22,11 +22,26 @@ const Bio = () => {
             <div className="acm-communities">
                 <h2>Our Communities</h2>
                 <ul class="communities-grid">
-                    <li>acm.HACKS</li>
-                    <li>acm.ALUMNI</li>
-                    <li>acm.RESEARCH</li>
-                    <li>acm.LEARN</li>
-                    <li>acm.DEV</li>
+                    <li>
+                        acm.HACKS
+                        <div class="hack-logo">hack</div>
+                    </li>
+                    <li>
+                        acm.LEARN
+                        <div class="learn-logo">learn</div>
+                    </li>
+                    <li>
+                        acm.ALUMNI
+                        <div class="alumni-logo">alumni</div>
+                    </li>
+                    <li>
+                        <p>acm.DEV</p>
+                        <div class="dev-logo">dev</div>
+                    </li>
+                    <li>
+                        <p>acm.RESEARCH</p>
+                        <div class="research-logo">rsch</div>
+                    </li>                    
                 </ul>
             </div>
         </div>

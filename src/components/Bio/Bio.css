@@ -176,21 +176,24 @@
 @media (max-width: 768px) {
     .acm-title h1 {
         font-size: 4rem;
+        margin-left: 8%;
     }
 
     .acm-title p {
         font-size: 2rem;
         width: 90%;
-        margin-left: 5%;
+        margin-left: 7%;
     }
 
     .bio-button {
-        width: 80%;
+        width: 50%;
         font-size: 1.5rem;
+        margin-left: 18%;
     }
 
     .acm-bio h2 {
         font-size: 3rem;
+        margin-top: 10%;
     }
 
     .acm-bio p {
@@ -200,16 +203,27 @@
 
     .acm-communities h2 {
         font-size: 2.5rem;
+        margin-left: 25%;
+        margin-top: 10%;
     }
 
     .communities-grid {
         grid-template-columns: 1fr;
         row-gap: 20px; 
+        margin-top: 8%;
+        margin-left: 12%;
     }
 
     .communities-grid li p {
         font-size: 1.5rem;
-        margin-left: 0;
+    }
+
+    .communities-grid li:nth-child(4) p{
+        margin-left: -8%;
+    }
+
+    .communities-grid li:nth-child(5) p{
+        margin-left: 12%;
     }
 
     .communities-grid .hack-logo,
@@ -221,6 +235,57 @@
         height: 5rem;
         font-size: 1.2rem;
         margin-left: 15%;
-        margin-bottom: 4%;       
+        margin-top: -12%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .acm-title h1 {
+        font-size: 4rem;
+        margin-left: 25%;
+    }
+
+    .acm-title p {
+        font-size: 2rem;
+        width: 80%;
+    }
+
+    .bio-button {
+        width: 30%;
+        font-size: 1.3rem;
+        margin-left: 30%;
+    }
+
+    .acm-bio{
+        margin-top: -3%;        
+    }
+    .acm-bio h2 {
+        font-size: 2.5rem;
+    }
+
+    .acm-bio p {
+        width: 90%;
+        font-size: 1.6rem;
+    }
+
+    .acm-communities h2 {
+        font-size: 2rem;
+        margin-left: 40%;
+    }
+
+    .communities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        margin-top: 5%;
+    }
+
+    .communities-grid .hack-logo,
+    .communities-grid .learn-logo,
+    .communities-grid .alumni-logo,
+    .communities-grid .dev-logo,
+    .communities-grid .research-logo {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 1rem;
     }
 }

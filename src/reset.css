@@ -35,3 +35,7 @@
   textarea {
     white-space: revert;
   }
+  .footer-wrapper * {
+    all: unset;
+  }
+  

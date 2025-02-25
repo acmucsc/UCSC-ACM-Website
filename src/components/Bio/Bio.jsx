@@ -23,15 +23,15 @@ const Bio = () => {
                 <h2>Our Communities</h2>
                 <ul class="communities-grid">
                     <li>
-                        acm.HACKS
+                        <p>acm.HACKS</p>
                         <div class="hack-logo">hack</div>
                     </li>
                     <li>
-                        acm.LEARN
+                        <p>acm.LEARN</p>
                         <div class="learn-logo">learn</div>
                     </li>
                     <li>
-                        acm.ALUMNI
+                        <p>acm.ALUMNI</p>
                         <div class="alumni-logo">alumni</div>
                     </li>
                     <li>

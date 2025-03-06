@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-6 px-4 w-full fixed bottom-0">
+    <footer className="bg-gray-900 py-6 px-4 w-full">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         {/* Left Menu */}
         <div className="flex items-center">

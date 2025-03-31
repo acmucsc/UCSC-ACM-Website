@@ -8,16 +8,27 @@ const jwtClient = new google.auth.JWT(
     ['https://www.googleapis.com/auth/calendar.readonly']
 );
 
-// Get the calendar events for the week
+// Get the calendar events for a given day's week 
 const getEvents = async (req, res) => {
+    console.log('/calendar/events requested');
+
+    // Check if date was given and is a valid date
+    let reqDate = req.body.date;
+    if (!reqDate || !isValidDate(reqDate)) {
+        res.status(400).send('Invalid request, valid date required.');
+        return
+    }
+
     try {
         await jwtClient.authorize();
 
+        // Choose correct google calendar
         const calendar = google.calendar({ version: 'v3', auth: jwtClient });
-        const calendarId = req.query.calendar ?? process.env.DEFAULT_CALENDAR_ID;
+        const calendarId = process.env.DEFAULT_CALENDAR_ID;
 
-        const date = isValidDate(req.query.calendar) ? new Date(req.query.calendar) : new Date();
+        const date = new Date(Date.parse(reqDate.trim()))
 
+        // Request events
         const response = await calendar.events.list({
             calendarId,
             timeMin: startOfWeek(date).toISOString(),
@@ -27,6 +38,7 @@ const getEvents = async (req, res) => {
             orderBy: 'startTime'
         });
 
+        // Parse events for returning
         const events = response.data.items.map(event => ({
             title: event.summary || '',
             start: event.start?.dateTime || '',
@@ -37,7 +49,12 @@ const getEvents = async (req, res) => {
             updated: event.updated || ''
         }));
 
-        res.status(200).send(events);
+        // Send correct status code
+        if (events.length === 0) {
+            res.status(204).send(events); 
+        } else {
+            res.status(200).send(events);
+        }
     } catch (error) {
         console.error('Error fetching events:', error);
         res.status(500).send('Error fetching events');

@@ -18,4 +18,13 @@ const endOfWeek = (date) => {
     return new Date(start.setDate(start.getDate() + 6));
 };
 
-module.exports = { isValidDate, startOfWeek, endOfWeek };
+const startOfMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth(), 1);
+};
+
+const endOfMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+};
+
+
+module.exports = { isValidDate, startOfWeek, endOfWeek, startOfMonth, endOfMonth };

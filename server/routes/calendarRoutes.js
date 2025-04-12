@@ -1,10 +1,11 @@
 const express = require('express');
-const { getEvents } = require('../controllers/calendarController');
+const { getWeekEvents, getMonthEvents } = require('../controllers/calendarController');
 
 const router = express.Router();
 
 // router.get('/events', getEvents);
 
-router.post('/events', getEvents);
+router.post('/events/week', getWeekEvents);
+router.post('/events/month', getMonthEvents);
 
 module.exports = router;

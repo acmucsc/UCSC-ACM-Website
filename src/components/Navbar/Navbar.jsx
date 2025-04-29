@@ -21,6 +21,7 @@ const Navbar = () => {
     }
 
     return (
+        <div className="navbar-scope">
         <header className="header-container">
             {/* Burger menu */}
             <div className={menu_class}>
@@ -71,6 +72,7 @@ const Navbar = () => {
                 </div>
             </div> 
         </header>
+        </div>
     );
 }
 

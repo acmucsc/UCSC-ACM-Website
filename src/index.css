@@ -4,3 +4,8 @@
     font-family: Roboto;
     src: url(../public/fonts/Roboto-Black.ttf) url(../public/fonts/Roboto-BlackItalic.ttf) url(../public/fonts/Roboto-Bold.ttf) url(../public/fonts/Roboto-BoldItalic.ttf) url(../public/fonts/Roboto-Italic.ttf) url(../public/fonts/Roboto-Light.ttf) url(../public/fonts/Roboto-LightItalic.ttf) url(../public/fonts/Roboto-Medium.ttf) url(../public/fonts/Roboto-MediumItalic.ttf) url(../public/fonts/Roboto-Regular.ttf) url(../public/fonts/Roboto-Thin.ttf) url(../public/fonts/Roboto-ThinItalic.ttf);
 }
+html, body {
+    overscroll-behavior: none;
+  }
+  
+  

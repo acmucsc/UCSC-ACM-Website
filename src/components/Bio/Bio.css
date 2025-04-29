@@ -1,373 +1,372 @@
 .acm-about {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Inter', sans-serif;
-    background-color: white;
-    margin-bottom: 10%;
-    height:100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+  margin-bottom: 10%;
+  height:100%;
 }
 
 .acm-title {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8%;
-    margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8%;
+  margin-left: 10%;
 }
 
 .acm-title h1{
-    font-size: 6rem;
-    margin-left: 0%;
+  font-size: 3.75rem;
+  margin-left: 0%;
 }
 
 .acm-title p{
-    font-style: italic;
-    font-size: 3rem;
-    width: 40%;
+  font-style: italic;
+  font-size: 1.875rem;
+  width: 40%;
 }
 
 .bio-button {
-    background-color: #008DD0;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 3%;
-    width: 15%;
-    height: 100%;
-    flex-shrink: 0;
-    font-size: 1.8rem;
-    font-weight: 700;
+  background-color: #008DD0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 3%;
+  width: 15%;
+  height: 100%;
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .acm-bio {
-    text-align: center;
+  text-align: center;
 }
 
 .acm-bio h2{
-    margin-top: 6%;
-    padding-bottom: 1%;
-    font-size: 4rem;
+  margin-top: 6%;
+  padding-bottom: 1%;
+  font-size: 2.5rem;
 }
 
 .acm-bio p{
-    width: 58%;
-    height: 58%;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0 auto;
+  width: 58%;
+  height: 58%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 auto;
 }
 
 .acm-communities h2 {
-    margin-top: 5%;
-    margin-left: 10%;
-    font-size: 3rem;
-    color: #0D99FF;
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 1.875rem;
+  color: #0D99FF;
 }
 
 .communities-grid {
-    margin-top: 4%;
-    margin-bottom: 8%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: -50px;
-    row-gap: 20px;
-    padding: 0;
-    text-align: center;
-    font-size: 2rem;
-    display: grid;
-    row-gap: 50%;
+  margin-top: 4%;
+  margin-bottom: 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: -50px;
+  row-gap: 20px;
+  padding: 0;
+  text-align: center;
+  font-size: 1.25rem;
+  display: grid;
+  row-gap: 50%;
 }
 
 .communities-grid .hack-logo{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 20%;
-    background: #7570A0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30%;
-    margin-top: -6.5%;
-    color: #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 20%;
+  background: #7570A0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30%;
+  margin-top: -6.5%;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 .communities-grid .learn-logo{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 20%;
-    background: #FBBD48;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 31%;
-    margin-top: -6.5%;
-    color: #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 20%;
+  background: #FBBD48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 31%;
+  margin-top: -6.5%;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 .communities-grid .alumni-logo{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 20%;
-    background: #7EA58C;
-    /* transform: rotate(-45deg);  */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30%;
-    margin-top: -6.5%;
-    color: #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 20%;
+  background: #7EA58C;
+  /* transform: rotate(-45deg);  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30%;
+  margin-top: -6.5%;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 .communities-grid .dev-logo{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 20%;
-    background: #F3885C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 31%;
-    margin-top: -6.5%;
-    color: #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 20%;
+  background: #F3885C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 31%;
+  margin-top: -6.5%;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 .communities-grid .research-logo{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 20%;
-    background: #EA5270;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30%;
-    margin-top: -6.5%;
-    color: #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 20%;
+  background: #EA5270;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30%;
+  margin-top: -6.5%;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
 .communities-grid li  p{
-    font-family: "Inter", sans-serif;
-    font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
 }
 
 .communities-grid li:nth-child(4) p{
-    margin-left: -3%;
-    font-size: 2rem;
+  margin-left: -3%;
+  font-size: 1.25rem;
 }
 
 .communities-grid li:nth-child(5) p{
-    margin-left: 4%;
-    font-size: 2rem;
+  margin-left: 4%;
+  font-size: 1.25rem;
 }
 
 /* Mobile devices: Phones and very small screens */
 @media (max-width: 600px) {
-    .acm-title {
-      margin-left: 5%;
-      margin-top: 12%;
-      align-items: center;
-    }
-  
-    .acm-title h1 {
-      font-size: 3rem;
-      text-align: center;
-    }
-  
-    .acm-title p {
-      font-size: 1.5rem;
-      width: 80%;
-      text-align: center;
-      margin-top: 1rem;
-    }
-  
-    .bio-button {
-      width: 60%;
-      font-size: 1.2rem;
-      margin-top: 2rem;
-      margin-left: 0;
-      align-self: center;
-    }
-  
-    .acm-bio h2 {
-      font-size: 2.5rem;
-      margin-top: 10%;
-    }
-  
-    .acm-bio p {
-      font-size: 1.2rem;
-      width: 90%;
-    }
-  
-    .acm-communities h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-left: 0;
-      margin-top: 10%;
-    }
-  
-    .communities-grid {
-      grid-template-columns: 1fr;
-      row-gap: 2rem;
-      margin-top: 8%;
-    }
-  
-    .communities-grid li p {
-      font-size: 1.5rem;
-      margin-left: 0;
-    }
-
-    .communities-grid li:nth-child(4) p{
-        font-size: 1.5rem;
-    }
-
-    .communities-grid li:nth-child(5) p{
-        font-size: 1.5rem;
-    }
-  
-    .communities-grid .hack-logo,
-    .communities-grid .learn-logo,
-    .communities-grid .alumni-logo,
-    .communities-grid .dev-logo,
-    .communities-grid .research-logo {
-      width: 5rem;
-      height: 5rem;
-      font-size: 1.2rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1rem;
-    }
+  .acm-title {
+    margin-left: 5%;
+    margin-top: 12%;
+    align-items: center;
   }
-  
-  /* Tablets: 601px to 900px */
-  @media (min-width: 601px) and (max-width: 900px) {
-    .acm-title {
-      margin-left: 8%;
-      margin-top: 10%;
-    }
-  
-    .acm-title h1 {
-      font-size: 4rem;
-    }
-  
-    .acm-title p {
-      font-size: 2rem;
-      width: 70%;
-    }
-  
-    .bio-button {
-      width: 30%;
-      font-size: 1.5rem;
-    }
-  
-    .acm-bio h2 {
-      font-size: 3rem;
-    }
-  
-    .acm-bio p {
-      font-size: 1.5rem;
-      width: 80%;
-    }
-  
-    .acm-communities h2 {
-      font-size: 2.5rem;
-      margin-left: 10%;
-    }
-  
-    .communities-grid {
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 2rem;
-    }
-  
-    .communities-grid li p {
-      font-size: 1.8rem;
-    }
 
-    .communities-grid li:nth-child(4) p{
-        font-size: 1.8rem;
-    }
-
-    .communities-grid li:nth-child(5) p{
-        font-size: 1.8rem;
-    }
-  
-    .communities-grid .hack-logo,
-    .communities-grid .learn-logo,
-    .communities-grid .alumni-logo,
-    .communities-grid .dev-logo,
-    .communities-grid .research-logo {
-      width: 5.5rem;
-      height: 5.5rem;
-      font-size: 1.3rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1%;
-    }
+  .acm-title h1 {
+    font-size: 1.875rem;
+    text-align: center;
   }
-  
-  /* Small laptops (901px to 1200px) */
-  @media (min-width: 901px) and (max-width: 1200px) {
-    .acm-title {
-      margin-left: 10%;
-    }
-  
-    .acm-title h1 {
-      font-size: 5rem;
-    }
-  
-    .acm-title p {
-      font-size: 2.5rem;
-      width: 60%;
-    }
-  
-    .bio-button {
-      width: 20%;
-      font-size: 1.5rem;
-    }
-  
-    .communities-grid {
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 2rem;
-    }
-  
-    .communities-grid li p {
-      font-size: 2rem;
-    }
 
-    .communities-grid li:nth-child(4) p{
-        font-size: 2rem;
-    }
-
-    .communities-grid li:nth-child(5) p{
-        font-size: 2rem;
-    }
-  
-    .communities-grid .hack-logo,
-    .communities-grid .learn-logo,
-    .communities-grid .alumni-logo,
-    .communities-grid .dev-logo,
-    .communities-grid .research-logo {
-      width: 6rem;
-      height: 6rem;
-      font-size: 1.5rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1%;
-    }
+  .acm-title p {
+    font-size: 0.9375rem;
+    width: 80%;
+    text-align: center;
+    margin-top: 0.625rem;
   }
-  
-  
+
+  .bio-button {
+    width: 60%;
+    font-size: 0.75em;
+    margin-top: 1.25rem;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .acm-bio h2 {
+    font-size: 1.5625rem;
+    margin-top: 10%;
+  }
+
+  .acm-bio p {
+    font-size: 0.75rem;
+    width: 90%;
+  }
+
+  .acm-communities h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 10%;
+  }
+
+  .communities-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+    margin-top: 8%;
+  }
+
+  .communities-grid li p {
+    font-size: 0.9375rem;
+    margin-left: 0;
+  }
+
+  .communities-grid li:nth-child(4) p{
+      font-size: 0.9375rem;
+  }
+
+  .communities-grid li:nth-child(5) p{
+      font-size: 0.9375rem;
+  }
+
+  .communities-grid .hack-logo,
+  .communities-grid .learn-logo,
+  .communities-grid .alumni-logo,
+  .communities-grid .dev-logo,
+  .communities-grid .research-logo {
+    width: 3.125rem;
+    height: 3.125rem;
+    font-size: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.625rem;
+  }
+}
+
+/* Tablets: 601px to 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .acm-title {
+    margin-left: 8%;
+    margin-top: 10%;
+  }
+
+  .acm-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .acm-title p {
+    font-size: 1.25rem;
+    width: 70%;
+  }
+
+  .bio-button {
+    width: 30%;
+    font-size: 0.9375rem;
+  }
+
+  .acm-bio h2 {
+    font-size: 1.875rem;
+  }
+
+  .acm-bio p {
+    font-size: 0.9375rem;
+    width: 80%;
+  }
+
+  .acm-communities h2 {
+    font-size: 1.5625rem;
+    margin-left: 10%;
+  }
+
+  .communities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.25rem;
+  }
+
+  .communities-grid li p {
+    font-size: 1.125rem;
+  }
+
+  .communities-grid li:nth-child(4) p{
+      font-size: 1.125rem;
+  }
+
+  .communities-grid li:nth-child(5) p{
+      font-size: 1.125rem;
+  }
+
+  .communities-grid .hack-logo,
+  .communities-grid .learn-logo,
+  .communities-grid .alumni-logo,
+  .communities-grid .dev-logo,
+  .communities-grid .research-logo {
+    width: 3.4375rem;
+    height: 3.4375rem;
+    font-size: 0.8125rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+}
+
+/* Small laptops (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .acm-title {
+    margin-left: 10%;
+  }
+
+  .acm-title h1 {
+    font-size: 3.125rem;
+  }
+
+  .acm-title p {
+    font-size: 1.5625rem;
+    width: 60%;
+  }
+
+  .bio-button {
+    width: 20%;
+    font-size: 0.9375rem;
+  }
+
+  .communities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.25rem;
+  }
+
+  .communities-grid li p {
+    font-size: 1.25rem;
+  }
+
+  .communities-grid li:nth-child(4) p{
+      font-size: 1.25rem;
+  }
+
+  .communities-grid li:nth-child(5) p{
+      font-size: 1.25rem;
+  }
+
+  .communities-grid .hack-logo,
+  .communities-grid .learn-logo,
+  .communities-grid .alumni-logo,
+  .communities-grid .dev-logo,
+  .communities-grid .research-logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: 0.9375rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+}
+

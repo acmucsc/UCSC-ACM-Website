@@ -19,11 +19,12 @@ const getEvents = async (req, res) => {
         const calendar = google.calendar({ version: 'v3', auth: jwtClient });
         const calendarId = process.env.DEFAULT_CALENDAR_ID;
 
-        const weekPeriod = 10;
+        const weekFuturePeriod = 10; // How many weeks after current week to show upcoming events
+        const weekPastPeriod = 2;    // How many weeks before current week to show passed events
 
         const date = new Date();
-        const weeksBefore = new Date(date.getTime() - weekPeriod * 7 * 24 * 60 * 60 * 1000);
-        const weeksAfter = new Date(date.getTime() + weekPeriod * 7 * 24 * 60 * 60 * 1000);
+        const weeksBefore = new Date(date.getTime() - weekPastPeriod * 7 * 24 * 60 * 60 * 1000);
+        const weeksAfter = new Date(date.getTime() + weekFuturePeriod * 7 * 24 * 60 * 60 * 1000);
 
 
         // Request events

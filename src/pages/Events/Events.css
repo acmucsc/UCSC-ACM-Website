@@ -83,7 +83,8 @@ a {
     transition: all ease-in-out 200ms;
     font-weight: bold;
     font-size: 1.4rem;
-    color: var(--white)
+    color: var(--white);
+    /* box-shadow: 2px 2px 5px #808080; */
 }
 .event-calendar-button:hover {
     background-color: var(--blue-hover);
@@ -108,4 +109,22 @@ a {
     align-items: center;
     margin: 20px 0px;
     gap: 40px;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1100px) { /*ipad*/
+    .event-wrapper {
+        width: 90vw;
+    }
+    .event-calendar-past-container {
+        gap: 30px;
+    }
+}
+  
+@media only screen and (max-width: 700px) { /*mobile*/
+    .event-wrapper {
+        width: 90vw;
+    }
+    .event-calendar-past-container {
+        gap: 20px;
+    }
 }

@@ -7,8 +7,7 @@ import './index.css';
 const App = () => {
   return (
     <div>
-      {/* <Welcome/> */}
-      <Events />
+      <Welcome/>
     </div>
   )
 }

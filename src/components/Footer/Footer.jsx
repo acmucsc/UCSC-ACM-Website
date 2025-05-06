@@ -6,25 +6,25 @@ const Footer = () => {
             <div className="w-1 h-32 bg-blue-500 mr-6"></div>
             <div className="flex flex-col items-center md:items-start space-y-4">
               <a
-                href="#home"
+                href="/"
                 className="text-white hover:text-blue-400 text-lg no-underline"
               >
                 Home
               </a>
               <a
-                href="#events"
+                href="/events"
                 className="text-white hover:text-blue-400 text-lg no-underline"
               >
                 Events
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="text-white hover:text-blue-400 text-lg no-underline"
               >
                 About
               </a>
               <a
-                href="#team"
+                href="/team"
                 className="text-white hover:text-blue-400 text-lg no-underline"
               >
                 Team

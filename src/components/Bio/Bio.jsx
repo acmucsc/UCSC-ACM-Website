@@ -21,26 +21,26 @@ const Bio = () => {
             </div>
             <div className="acm-communities">
                 <h2>Our Communities</h2>
-                <ul class="communities-grid">
+                <ul className="communities-grid">
                     <li>
                         <p>acm.HACKS</p>
-                        <div class="hack-logo">hack</div>
+                        <div className="hack-logo">hack</div>
                     </li>
                     <li>
                         <p>acm.LEARN</p>
-                        <div class="learn-logo">learn</div>
+                        <div className="learn-logo">learn</div>
                     </li>
                     <li>
                         <p>acm.ALUMNI</p>
-                        <div class="alumni-logo">alumni</div>
+                        <div className="alumni-logo">alumni</div>
                     </li>
                     <li>
                         <p>acm.DEV</p>
-                        <div class="dev-logo">dev</div>
+                        <div className="dev-logo">dev</div>
                     </li>
                     <li>
                         <p>acm.RESEARCH</p>
-                        <div class="research-logo">rsch</div>
+                        <div className="research-logo">rsch</div>
                     </li>                    
                 </ul>
             </div>

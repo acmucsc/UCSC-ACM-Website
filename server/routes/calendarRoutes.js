@@ -1,5 +1,5 @@
 const express = require('express');
-const { getWeekEvents, getMonthEvents } = require('../controllers/calendarController');
+const { getWeekEvents, getMonthEvents, getEvents } = require('../controllers/calendarController');
 
 const router = express.Router();
 
@@ -7,5 +7,6 @@ const router = express.Router();
 
 router.post('/events/week', getWeekEvents);
 router.post('/events/month', getMonthEvents);
+router.get('/events', getEvents);
 
 module.exports = router;

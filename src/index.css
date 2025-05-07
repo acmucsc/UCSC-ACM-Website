@@ -8,4 +8,12 @@ html, body {
     overscroll-behavior: none;
   }
   
+body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(/img/linkedin-color.webp) url(/img/github-color.webp) url(/img/instagram-color.webp) url(/img/discord-color.webp); /*change when adding icons*/
+}
   

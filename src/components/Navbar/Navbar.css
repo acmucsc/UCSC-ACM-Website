@@ -7,18 +7,6 @@
 .navbar-scope{
     font-size: 62.5%;
 }
-  
-.navbar-scope body {
-    background-color: var(--white);
-}
-.navbar-scope body:after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -1;
-    content: url(../public/img/linkedin-color.webp) url(../public/img/github-color.webp) url(../public/img/instagram-color.webp) url(../public/img/discord-color.webp); /*change when adding icons*/
-}
 .wrapper-main {
     width: 1100px;
     margin: 0 auto;
@@ -84,7 +72,7 @@
     gap: 5px;
 }
 .header-main-logo-img {
-    background-image: url(../../../public/img/logo.webp);
+    background-image: url(/img/logo.webp);
     background-repeat: no-repeat;
     background-size: cover;
     width: 55px;
@@ -112,7 +100,7 @@
     padding: 0 10px 0 10px;
     font-family: 'Roboto', sans-serif;
     line-height: 60px;
-    font-size: 1.6em;
+    font-size: 2.8em;
     color: var(--black);
     display: block;
     height: 100%;
@@ -133,46 +121,46 @@
 .header-main-sm-gh {
     width: 20px;
     height: 20px;
-    background-image: url(../../../public/img/github.webp);
+    background-image: url(/img/github.webp);
     background-repeat: no-repeat;
     background-size: cover;
     transition: all ease-in-out 200ms;
 }
 .header-main-sm-gh:hover {
-    background-image: url(../../../public/img/github-color.webp);
+    background-image: url(/img/github-color.webp);
 }
 .header-main-sm-in {
     width: 20px;
     height: 20px;
-    background-image: url(../../../public/img/instagram.webp);
+    background-image: url(/img/instagram.webp);
     background-repeat: no-repeat;
     background-size: cover;
     transition: all ease-in-out 200ms;
 }
 .header-main-sm-in:hover {
-    background-image: url(../../../public/img/instagram-color.webp);
+    background-image: url(/img/instagram-color.webp);
 }
 .header-main-sm-ln {
     width: 20px;
     height: 20px;
-    background-image: url(../../../public/img/linkedin.webp);
+    background-image: url(/img/linkedin.webp);
     background-repeat: no-repeat;
     background-size: cover;
     transition: all ease-in-out 200ms;
 }
 .header-main-sm-ln:hover {
-    background-image: url(../../../public/img/linkedin-color.webp);
+    background-image: url(/img/linkedin-color.webp);
 }
 .header-main-sm-di {
     width: 20px;
     height: 20px;
-    background-image: url(../../../public/img/discord.webp);
+    background-image: url(/img/discord.webp);
     background-repeat: no-repeat;
     background-size: cover;
     transition: all ease-in-out 200ms;
 }
 .header-main-sm-di:hover {
-    background-image: url(../../../public/img/discord-color.webp);
+    background-image: url(/img/discord-color.webp);
 }
 .header-main-sm nav {
     display: none;

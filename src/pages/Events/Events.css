@@ -3,7 +3,7 @@
     --blue-hover: #0075ac;
     --white: #ffffff;
     --black: #000000;
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
 }
 .event-layout {
     display: flex;
@@ -18,37 +18,37 @@
 .event-main-content {
     flex-grow: 1;
 }
-h1 {
-    font-size: 2.6rem;
+.event-layout h1 {
+    font-size: 1.6rem;
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     text-transform: capitalize;
 }
-h2 {
-    font-size: 2.6rem;
+.event-layout h2 {
+    font-size: 1.6rem;
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     text-transform: capitalize;
 }
-h3 {
-    font-size: 2.6rem;
+.event-layout h3 {
+    font-size: 1.6rem;
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     text-transform: capitalize;
 }
-p {
+.event-layout p {
     font-size: 1.6rem;
     line-height: 1.75;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
 }
-a {
+.event-layout a {
     font-size: 1.6rem;
     line-height: 1.75;
     color: var(--black);

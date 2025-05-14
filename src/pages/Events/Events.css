@@ -19,7 +19,7 @@
     flex-grow: 1;
 }
 .event-layout h1 {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
@@ -27,7 +27,7 @@
     text-transform: capitalize;
 }
 .event-layout h2 {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
@@ -35,7 +35,7 @@
     text-transform: capitalize;
 }
 .event-layout h3 {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 1.5;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
@@ -43,13 +43,13 @@
     text-transform: capitalize;
 }
 .event-layout p {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 1.75;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
 }
 .event-layout a {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 1.75;
     color: var(--black);
     font-family: 'Roboto', sans-serif;
@@ -57,7 +57,7 @@
     text-decoration: none;
 }
 .event-header {
-    font-size: 3.2rem;
+    font-size: 3.75rem;
 }
 .event-info-section {
     display: flex;
@@ -74,20 +74,23 @@
     padding-top: 40px;
     text-align: center;
 }
+.event-info-text {
+    font-size: 1.6rem;
+}
 .event-calendar-button {
     margin-top: 10px;
-    width: 175px;
-    height: 40px;
     border-radius: 20px;
     background-color: var(--blue);
-    transition: all ease-in-out 200ms;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.125rem;
     color: var(--white);
+    padding: 5px 25px;
+    transition: all ease-in-out 200ms;
     /* box-shadow: 2px 2px 5px #808080; */
 }
 .event-calendar-button:hover {
     background-color: var(--blue-hover);
+    cursor: pointer;
 }
 .event-calendar-section {
     padding-top: 40px;
@@ -102,6 +105,9 @@
     margin-bottom: 60px;
     gap: 40px;
 }
+.event-calendar-quarter-text {
+    font-size: 2.5rem;
+}
 .event-calendar-past-container {
     display: flex;
     flex-wrap: wrap;
@@ -109,6 +115,12 @@
     align-items: center;
     margin: 20px 0px;
     gap: 40px;
+}
+.event-calendar-past-text {
+    font-size: 2.5rem;
+}
+.no-events-text {
+    font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1100px) { /*ipad*/
@@ -118,6 +130,21 @@
     .event-calendar-past-container {
         gap: 30px;
     }
+    .event-header {
+        font-size: 3.75rem;
+    }
+    .event-info-text {
+        font-size: 2.2rem;
+    }
+    .event-calendar-quarter-text {
+        font-size: 2.8rem;
+    }
+    .event-calendar-past-text {
+        font-size: 2.8rem;
+    }
+    .no-events-text {
+        font-size: 1.6rem;
+    }
 }
   
 @media only screen and (max-width: 700px) { /*mobile*/
@@ -126,5 +153,20 @@
     }
     .event-calendar-past-container {
         gap: 20px;
+    }
+    .event-header {
+        font-size: 2.8rem;
+    }
+    .event-info-text {
+        font-size: 1.4rem;
+    }
+    .event-calendar-quarter-text {
+        font-size: 2rem;
+    }
+    .event-calendar-past-text {
+        font-size: 2rem;
+    }
+    .no-events-text {
+        font-size: 1.2rem;
     }
 }

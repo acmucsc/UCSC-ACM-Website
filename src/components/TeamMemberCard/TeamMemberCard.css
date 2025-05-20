@@ -1,0 +1,45 @@
+.team-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #007bff;
+    background-color: #d3d3d3;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .team-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .team-role {
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  .team-grad {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+  }
+  

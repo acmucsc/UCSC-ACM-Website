@@ -13,7 +13,8 @@ const Events = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/calendar/events');
+                const response = await axios.get('/api/calendar');
+                // const response = await axios.get('http://localhost:8000/calendar/events'); 
                 setEvents(response.data);
             } catch (err) {
                 console.error('Error fetching events:', err);

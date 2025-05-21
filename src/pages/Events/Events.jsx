@@ -42,7 +42,7 @@ const Events = () => {
                         <div className="event-info-text-area">
                             <p className="event-info-text">Find all ACM events below and add them to your own calendar by clicking the button below!</p>
                         </div>
-                        <a href="https://calendar.google.com/calendar/u/0/r?cid=53c94138c32b205f33adbe39d0cad9e11ff2fe006f97fe79e759d547ccd118a6@group.calendar.google.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://calendar.google.com/calendar/u/0/r?cid=santacruz.acm@gmail.com" target="_blank" rel="noopener noreferrer">
                             <button className="event-calendar-button">Add Calendar</button>
                         </a>
                     </section>

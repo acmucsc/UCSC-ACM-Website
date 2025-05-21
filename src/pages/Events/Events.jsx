@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { Bars } from 'react-loading-icons'
 
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
@@ -9,6 +10,7 @@ import './Events.css'
 
 const Events = () => {
     const [events, setEvents] = useState([]);
+    let loadingDone = false;
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -16,6 +18,7 @@ const Events = () => {
                 const response = await axios.get('/api/calendar');
                 // const response = await axios.get('http://localhost:8000/calendar/events'); 
                 setEvents(response.data);
+                loadingDone = true;
             } catch (err) {
                 console.error('Error fetching events:', err);
             }
@@ -66,7 +69,11 @@ const Events = () => {
                                     );
                                 })
                             ) : (
-                                <p className="no-events-text">No upcoming events.</p>
+                                loadingDone ? (
+                                    <p className="no-events-text">No upcoming events.</p>
+                                ) : (
+                                    <Bars stroke="black" width={80} height={40} />
+                                )
                             )}
                         </div>
                         <h2 className="event-calendar-past-text">Past Events</h2>
@@ -90,7 +97,11 @@ const Events = () => {
                                         );
                                 })
                             ) : (
-                                <p className="no-events-text">No past events.</p>
+                                loadingDone ? (
+                                    <p className="no-events-text">No upcoming events.</p>
+                                ) : (
+                                    <Bars stroke="black" width={80} height={40} />
+                                )
                             )}
                         </div>
                     </section>

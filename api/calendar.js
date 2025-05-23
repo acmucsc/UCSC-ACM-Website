@@ -1,5 +1,8 @@
 import { google } from 'googleapis';
 
+const WEEKSPASTPERIOD = 12;   // How many weeks before current week to show passed even
+const WEEKSFUTUREPERIOD = 5; // How many weeks after current week to show upcoming events
+
 const jwtClient = new google.auth.JWT(
     process.env.CLIENT_EMAIL,
     null,
@@ -19,12 +22,9 @@ const getEvents = async (req, res) => {
         const calendar = google.calendar({ version: 'v3', auth: jwtClient });
         const calendarId = process.env.DEFAULT_CALENDAR_ID;
 
-        const weekFuturePeriod = 10; // How many weeks after current week to show upcoming events
-        const weekPastPeriod = 2;    // How many weeks before current week to show passed events
-
         const date = new Date();
-        const weeksBefore = new Date(date.getTime() - weekPastPeriod * 7 * 24 * 60 * 60 * 1000);
-        const weeksAfter = new Date(date.getTime() + weekFuturePeriod * 7 * 24 * 60 * 60 * 1000);
+        const weeksBefore = new Date(date.getTime() - WEEKSPASTPERIOD * 7 * 24 * 60 * 60 * 1000);
+        const weeksAfter = new Date(date.getTime() + WEEKSFUTUREPERIOD * 7 * 24 * 60 * 60 * 1000);
 
         // Request events
         const response = await calendar.events.list({

@@ -1,6 +1,17 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
+// array of objects that contains the different department names
+const boardMembers = [
+  { title: "President", name: "Placeholder" },
+  { title: "Vice President", name: "Placeholder" },
+  { title: "Instruction Lead", name: "Placeholder" },
+  { title: "Community Lead", name: "Placeholder" },
+  { title: "Web-Dev Lead", name: "Placeholder" },
+  { title: "Events Lead", name: "Placeholder" },
+];
+
+
 const About = () => {
   return (
     <div className="flex flex-col min-h-screen">
@@ -110,6 +121,28 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        {/* SECTION 3: Meet the Board */}
+        <section className="py-16 px-6 md:px-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Meet the Board</h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            {boardMembers.map((department, idx) => (
+              <div
+                key={idx}
+                className="border-6 rounded-xl p-6 flex flex-col items-center text-center space-y-4"
+                style={{ borderColor: "#008DD0" }}
+              >
+                <h3 className="text-xl font-bold">{department.title}</h3>
+                <img
+                  src="src/assets/acm-logo.png"
+                  alt="ACM Logo"
+                  className="w-24 h-24"
+                />
+                <p className="text-lg font-semibold">{department.name}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>

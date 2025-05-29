@@ -184,8 +184,10 @@
         padding-left: 60px;
     }
     .burger-menu-contents {
+        width: 100%;
         margin-top: 80px;
         z-index: 900;
+        position: fixed;
     }
     .burger-menu-contents ul {
         width: 100%;
@@ -226,7 +228,7 @@
         width: 100%;
         height: 100vh;
         background-color: #222222;
-        position: absolute;
+        position: fixed;
         right:0;
         top: 0;
         z-index: 1000;
@@ -286,8 +288,10 @@
         padding-left: 60px;
     }
     .burger-menu-contents {
+        width: 100%;
         margin-top: 80px;
         z-index: 900;
+        position: fixed;
     }
     .burger-menu-contents ul {
         width: 100%;
@@ -328,7 +332,7 @@
         width: 100%;
         height: 100vh;
         background-color: #222222;
-        position: absolute;
+        position: fixed;
         right:0;
         top: 0;
         z-index: 1000;

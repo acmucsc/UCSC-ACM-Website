@@ -26,7 +26,7 @@
 }
 
 .bio-button {
-  background-color: #008DD0;
+  background-color: var(--blue);
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -37,6 +37,10 @@
   flex-shrink: 0;
   font-size: 1.125rem;
   font-weight: 700;
+  transition: all ease-in-out 200ms;
+}
+.bio-button:hover {
+  background-color: var(--blue-hover);
 }
 
 .acm-bio {

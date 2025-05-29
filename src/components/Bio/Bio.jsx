@@ -1,19 +1,18 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./Bio.css";
 
 const Bio = () => {
-    const handleClick = () => {
-        alert("Learn more about the events!");
-    };
 
     return (
         <div className="acm-about">
             <div className="acm-title">
                 <h1>ACM @ UCSC</h1>
                 <p>The largest computer science community at UC Santa Cruz.</p>
-                <button onClick={handleClick} className="bio-button">
-                    Events
-                </button>
+                <Link to="/events">
+                    <button className="bio-button">Events</button>
+                </Link>
+                
             </div>
             <div className="acm-bio">
                 <h2>What is ACM? </h2>

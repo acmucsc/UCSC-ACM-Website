@@ -84,13 +84,13 @@
     font-weight: bold;
     font-size: 1.125rem;
     color: var(--white);
+    cursor: pointer;
     padding: 5px 25px;
     transition: all ease-in-out 200ms;
     /* box-shadow: 2px 2px 5px #808080; */
 }
 .event-calendar-button:hover {
     background-color: var(--blue-hover);
-    cursor: pointer;
 }
 .event-calendar-section {
     padding-top: 40px;

@@ -36,10 +36,10 @@ const Navbar = () => {
             </div>
             {/* Header */}
             <div className="header-main">
-                <a href="#"><div className="header-main-logo">
+                <Link to="/"><div className="header-main-logo">
                     <div className="header-main-logo-img"></div>
                     <p>at UC Santa Cruz</p>
-                </div></a>
+                </div></Link>
                 <nav className="header-main-nav">
                     <ul>
                         <li><Link to="/">Home</Link></li>

@@ -10,7 +10,7 @@ import './Events.css'
 
 const Events = () => {
     const [events, setEvents] = useState([]);
-    let loadingDone = false;
+    const [loadingDone, setLoadingDone] = useState(false);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -18,7 +18,7 @@ const Events = () => {
                 const response = await axios.get('/api/calendar');
                 // const response = await axios.get('http://localhost:8000/calendar/events'); 
                 setEvents(response.data);
-                loadingDone = true;
+                setLoadingDone(true);
             } catch (err) {
                 console.error('Error fetching events:', err);
             }

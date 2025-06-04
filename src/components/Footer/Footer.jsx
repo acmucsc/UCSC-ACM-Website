@@ -1,44 +1,65 @@
+import baskinLogo from "../../assets/baskin.png";
 const Footer = () => {
-    return (
-      <footer className="bg-gray-900 py-6 px-4 w-full">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <div className="flex items-center">
-            <div className="w-1 h-32 bg-blue-500 mr-6"></div>
-            <div className="flex flex-col items-center md:items-start space-y-4">
-              <a
-                href="/"
-                className="text-white hover:text-blue-400 text-lg no-underline"
-              >
-                Home
-              </a>
-              <a
-                href="/events"
-                className="text-white hover:text-blue-400 text-lg no-underline"
-              >
-                Events
-              </a>
-              <a
-                href="/about"
-                className="text-white hover:text-blue-400 text-lg no-underline"
-              >
-                About
-              </a>
-              <a
-                href="/team"
-                className="text-white hover:text-blue-400 text-lg no-underline"
-              >
-                Team
-              </a>
-            </div>
-          </div>
-          <div className="hidden md:flex justify-center md:justify-end">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg py-3 px-6 rounded-lg">
-              Join Mailing List
-            </button>
-          </div>
+  return (
+    <footer className="bg-[#003057] text-white w-full mt-20">
+      <div className="relative flex flex-col items-center justify-center py-10 px-6 space-y-8 max-w-7xl mx-auto">
+
+        {/* Mobile version of Mailing List button */}
+        <div className="flex justify-center md:hidden">
+          <button className="border border-white text-white hover:bg-white hover:text-[#003057] font-medium text-sm py-2 px-5 rounded-full transition-colors duration-200">
+            Join Mailing List
+          </button>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
+
+        {/* Divider */}
+        <hr className="border-blue-800 w-full" />
+
+        {/* UCSC/Baskin Logo Section */}
+        <div className="flex flex-col items-center space-y-4">
+          {/* Baskin logo */}
+          <a href="https://undergrad.engineering.ucsc.edu/student-organizations/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={baskinLogo}
+              alt="Baskin Affiliation Logo"
+              className="w-52 h-auto"
+            />
+          </a>
+
+          {/* UCSC + Baskin combo logo */}
+          <a href="https://engineering.ucsc.edu/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://bpb-us-w2.wpmucdn.com/wordpress.ucsc.edu/dist/6/29/files/2022/07/UCSC_Baskin-Engineering-326x50-1.png"
+              alt="UC Santa Cruz & Baskin Engineering Logo"
+              className="w-72 h-auto"
+            />
+          </a>
+        </div>
+
+        {/* Text Policy Section */}
+        <div className="text-center text-sm text-gray-300 max-w-4xl space-y-2">
+          <p className="italic">
+            This group is open to all students consistent with state and federal law, the{' '}
+            <a href="https://www.ucop.edu/operating-budget/fees-and-enrollments/policies-and-resources/nondiscrimination-statement.html" className="underline" target="_blank">UC Nondiscrimination Statement</a> and the{' '}
+            <a href="https://policy.ucop.edu/doc/2710540/PACAOS-Appendix-C" className="underline" target="_blank">
+              Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters
+            </a>.
+          </p>
+          <p>Baskin School of Engineering | 1156 High St | Santa Cruz, CA 95064</p>
+          <p>
+            <a href="https://its.ucsc.edu/terms/" target="_blank" className="underline">Privacy Policy/Terms of Use</a> | &copy;2025 Regents of the University of California. All rights reserved.
+          </p>
+        </div>
+
+        {/* Desktop version of Mailing List button */}
+        <div className="hidden md:block absolute right-6 bottom-6">
+          <button className="border border-white text-white hover:bg-white hover:text-[#003057] font-medium text-sm py-2 px-5 rounded-full transition-colors duration-200">
+            Join Mailing List
+          </button>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

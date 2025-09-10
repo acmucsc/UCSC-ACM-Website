@@ -23,7 +23,7 @@
   }
   
   .sub-title {
-    color: #007bff;
+    color: var(--blue);
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 20px;

@@ -1,0 +1,97 @@
+.footer {
+  background-color: #003057;
+  color: var(--white);
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.footer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  gap: 2rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Mailing List Button (shared styles) */
+.footer-button {
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.footer-button:hover {
+  background-color: white;
+  color: #003057;
+}
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #1e3a8a;
+  width: 100%;
+}
+
+/* Logos */
+.footer-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo-baskin {
+  width: 13rem;
+  height: auto;
+}
+
+.footer-logo-ucsc {
+  width: 18rem;
+  height: auto;
+}
+
+/* Policy Text */
+.footer-policy {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--white);
+  max-width: 56rem;
+}
+
+.footer-policy a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* Mailing List Buttons */
+.footer-mailing-mobile {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-mailing-desktop {
+  display: none;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer-mailing-mobile {
+    display: none;
+  }
+  .footer-mailing-desktop {
+    display: block;
+  }
+}

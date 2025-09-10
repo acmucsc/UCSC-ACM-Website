@@ -1,0 +1,14 @@
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.welcome-main {
+  flex-grow: 1;
+}
+
+/* Ensure footer sticks to the bottom when content is short */
+.welcome-page footer {
+  margin-top: auto;
+}

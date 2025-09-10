@@ -29,8 +29,13 @@ const Events = () => {
 
     const currentDate = new Date();
 
-    const upcomingEvents = events.filter(event => new Date(event.start) >= currentDate);
-    const pastEvents = events.filter(event => new Date(event.start) < currentDate);
+    let upcomingEvents = []
+    let pastEvents = []
+    if (events.length > 0) {
+        upcomingEvents = events.filter(event => new Date(event.start) >= currentDate);
+        pastEvents = events.filter(event => new Date(event.start) < currentDate);
+    }
+    
 
     return (
         <div>

@@ -1,8 +1,25 @@
 :root {
+    --blue-bright: #60a5fa;
+    --blue-base: #2563eb;
     --blue: #008DD0;
     --blue-hover: #0075ac;
     --white: #ffffff;
     --black: #000000;
+    --blue-light: #00BFFF;
+}
+.navbar-separator {
+    position: fixed; 
+    top: 80px; 
+    width: 100%;
+    height: 10px; /* Keeping the thickness you asked for */
+    z-index: 999; 
+    
+    /* **MAKE THIS CHANGE:** */
+    background: linear-gradient(
+        to right, 
+        var(--blue-bright), /* Start with #60a5fa (Light Blue) */
+        var(--blue-base)    /* Transition to #2563eb (Medium Blue) */
+    );
 }
 .navbar-scope{
     font-size: 62.5%;
@@ -61,7 +78,6 @@
     display: flex;
     justify-content: space-between;
     z-index: 1000;
-    border-bottom: 10px solid var(--blue);
 }
 .header-main-logo {
     width: auto;
@@ -72,7 +88,7 @@
     gap: 5px;
 }
 .header-main-logo-img {
-    background-image: url(/img/logo.webp);
+    background-image: url('../../assets/acm-logo2.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 55px;

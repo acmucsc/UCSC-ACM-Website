@@ -72,6 +72,8 @@ const Navbar = () => {
                 </div>
             </div> 
         </header>
+        {/* New element for the gradient strip */}
+        <div className="navbar-separator"></div>
         </div>
     );
 }

@@ -1,10 +1,14 @@
 .banner-app {
   text-align: center;
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
 /* all images */
-img {
+.banner-app img {
   max-width: 400px;
   height: 15rem;
   object-fit: cover;
@@ -15,6 +19,8 @@ img {
   width: 100%;
   height: 15rem;
   overflow: hidden;
+  margin: 2px 0;
+  /* Tiny gap between rows */
 }
 
 .banner-wrapper .wrapper {
@@ -23,7 +29,6 @@ img {
 
 .banner-wrapper .wrapper .images {
   display: flex;
-  /* animation: swipe var(--speed) linear infinite; */
 }
 
 @keyframes swipe {
@@ -36,22 +41,109 @@ img {
   }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1100px) { /*ipad*/
-    img {
-        max-width: 400px;
-        height: 15rem;
-    }
-    .banner-wrapper {
-        height: 15rem;
-    }
+@media only screen and (min-width: 700px) and (max-width: 1100px) {
+
+  /*ipad*/
+  .banner-app img {
+    max-width: 400px;
+    height: 15rem;
+  }
+
+  .banner-wrapper {
+    height: 15rem;
+  }
 }
-  
-@media only screen and (max-width: 700px) { /*mobile*/
-    img {
-        max-width: 300px;
-        height: 10rem;
-    }
-    .banner-wrapper {
-        height: 10rem;
-    }
+
+@media only screen and (max-width: 700px) {
+
+  /*mobile*/
+  .banner-app img {
+    max-width: 300px;
+    height: 10rem;
+  }
+
+  .banner-wrapper {
+    height: 10rem;
+  }
+}
+
+/* Interaction */
+.image {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Modal / Lightbox */
+.banner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.banner-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+
+.banner-modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  /* Ensure it fits vertically */
+  display: block;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.banner-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.banner-close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -10,7 +10,7 @@ const Welcome = () => {
       <Navbar />
       <main className="welcome-main navbar-scope">
         <Bio />
-        <Banner speed={40000} />
+        <Banner speed={400000} />
         {/* <ScrollingCarousel /> */}
       </main>
       <Footer />

@@ -152,7 +152,7 @@
 }
 
 .desktop-nav li a:hover {
-    color: var(--blue-hover);
+    color: var(--blue-base);
 }
 
 .mobile-burger-trigger {

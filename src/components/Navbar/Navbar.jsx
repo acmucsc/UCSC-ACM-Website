@@ -45,7 +45,6 @@ const Navbar = () => {
                         <nav className="desktop-nav">
                             <ul>
                                 <li><Link to="/team">committees</Link></li>
-                                <li><Link to="/about">initiatives</Link></li>
                                 <li><Link to="/events">events</Link></li>
                                 <li><Link to="/about">about</Link></li>
                             </ul>

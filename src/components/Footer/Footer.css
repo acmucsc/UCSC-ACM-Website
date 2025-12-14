@@ -1,97 +1,256 @@
-.footer {
-  background-color: #003057;
+.footer-new {
+  background-color: #0d0d0d;
   color: var(--white);
-  width: 100%;
+  padding: 4rem 2rem;
+  font-family: 'Roboto', sans-serif;
   margin-top: 5rem;
-}
-
-.footer-container {
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 1.5rem;
-  gap: 2rem;
-  max-width: 1120px;
+}
+
+.footer-content {
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Mailing List Button (shared styles) */
-.footer-button {
-  border: 1px solid var(--white);
-  background: transparent;
-  color: var(--white);
-  font-weight: 500;
-  font-size: 0.875rem;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-}
-
-.footer-button:hover {
-  background-color: white;
-  color: #003057;
-}
-
-/* Divider */
-.footer-divider {
-  border: none;
-  border-top: 1px solid #1e3a8a;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  justify-items: center;
   width: 100%;
 }
 
-/* Logos */
-.footer-logos {
+/* Common Headings */
+.footer-heading {
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer-subheading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* Columns */
+.footer-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-}
-
-.footer-logo-baskin {
-  width: 13rem;
-  height: auto;
-}
-
-.footer-logo-ucsc {
-  width: 18rem;
-  height: auto;
-}
-
-/* Policy Text */
-.footer-policy {
   text-align: center;
-  font-size: 0.875rem;
-  color: var(--white);
-  max-width: 56rem;
 }
 
-.footer-policy a {
-  text-decoration: underline;
-  color: inherit;
+/* Column 1: Socials & Contact */
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Mailing List Buttons */
-.footer-mailing-mobile {
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: white;
+  transition: transform 0.2s, fill 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  fill: #2563eb;
+  /* Matches member login button border */
+}
+
+.mailing-list-btn {
+  display: inline-block;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.mailing-list-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Made By Section */
+.made-by-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.made-by-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Matching Bio.css .community-icon but scaled */
+.made-by-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #1dd1a1 0%, #55efc4 100%);
+  border-radius: 8px;
+  transform: rotate(45deg);
   display: flex;
   justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  margin: 10px;
 }
 
-.footer-mailing-desktop {
-  display: none;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
+.made-by-svg {
+  width: 60%;
+  height: 60%;
+  transform: rotate(-45deg);
+  /* Counteract parent rotation */
+  filter: brightness(0) invert(1);
+  /* Force white */
+  object-fit: contain;
+}
+
+.made-by-text {
+  display: flex;
+  align-items: baseline;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.text-acm {
+  color: #fff;
+  font-weight: 800;
+}
+
+.text-dev {
+  font-weight: 800;
+  background: linear-gradient(135deg, #1dd1a1 0%, #55efc4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* Column 2: Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links li a {
+  color: #e5e7eb;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #6b7280;
+  font-size: 1rem;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.footer-links li a:hover {
+  color: white;
+  text-decoration-color: white;
+}
+
+/* Column 3: Partners/Affiliates */
+.partner-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.partner-logo.baskin {
+  width: 14rem;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.partner-logo:hover {
+  opacity: 0.9;
+}
+
+/* Vercel Badge */
+.vercel-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  margin-top: 1rem;
+}
+
+.vercel-badge:hover {
+  opacity: 1;
+}
+
+.vercel-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #888;
+  font-weight: 700;
+}
+
+.vercel-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.vercel-logo {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.vercel-name {
+  font-family: 'Inter', sans-serif;
+  /* Vercel uses Inter mostly */
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+/* Bottom Copyright */
+.copyright-section-bottom {
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #1f2937;
+  /* Subtle divider */
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-  .footer-mailing-mobile {
-    display: none;
-  }
-  .footer-mailing-desktop {
-    display: block;
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 4rem;
   }
 }

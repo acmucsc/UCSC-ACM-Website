@@ -58,11 +58,11 @@ const StatCard = ({ end, label, color, suffix = "+" }) => {
 
 const Bio = () => {
     const communities = [
-        { name: "Hacks", short: "hack", color: "#ff9f43", gradient: "linear-gradient(135deg, #ff9f43 0%, #ffc048 100%)", description: "Hackathons" },
-        { name: "Learn", short: "lrn", color: "#54a0ff", gradient: "linear-gradient(135deg, #54a0ff 0%, #00d2d3 100%)", description: "Workshops & Skills" },
-        { name: "Alumni", short: "alum", color: "#5f27cd", gradient: "linear-gradient(135deg, #5f27cd 0%, #9c88ff 100%)", description: "Networking & Career" },
-        { name: "Dev", short: "dev", color: "#1dd1a1", gradient: "linear-gradient(135deg, #1dd1a1 0%, #55efc4 100%)", description: "Web Development" },
-        { name: "Research", short: "rsch", color: "#ff6b6b", gradient: "linear-gradient(135deg, #ff6b6b 0%, #ff9ff3 100%)", description: "Academic Research" }
+        { name: "Hacks", short: "hack", color: "#ff9f43", gradient: "linear-gradient(135deg, #ff9f43 0%, #ffc048 100%)", description: "Hackathons", icon: "/hacks.svg" },
+        { name: "Learn", short: "lrn", color: "#54a0ff", gradient: "linear-gradient(135deg, #54a0ff 0%, #00d2d3 100%)", description: "Workshops & Skills", icon: "/learn.svg" },
+        { name: "Alumni", short: "alum", color: "#5f27cd", gradient: "linear-gradient(135deg, #5f27cd 0%, #9c88ff 100%)", description: "Networking & Career", icon: "/alum.svg" },
+        { name: "Dev", short: "dev", color: "#1dd1a1", gradient: "linear-gradient(135deg, #1dd1a1 0%, #55efc4 100%)", description: "Web Development", icon: "/dev.svg" },
+        { name: "Research", short: "rsch", color: "#ff6b6b", gradient: "linear-gradient(135deg, #ff6b6b 0%, #ff9ff3 100%)", description: "Academic Research", icon: "/research.svg" }
     ];
 
     const socialIcons = [
@@ -114,7 +114,6 @@ const Bio = () => {
 
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
-                // Performance Optimization: Only render visible diamonds
                 // Performance Optimization: Only render visible diamonds
                 // Tighter constraint: > 6 covers approx 550px height, safe for 325px container.
                 if (Math.abs(r + c - 45) > 6) continue;
@@ -194,8 +193,7 @@ const Bio = () => {
                     {communities.map((comm, index) => (
                         <div className="community-card" key={index}>
                             <div className="community-icon" style={{ background: comm.gradient }}>
-                                {/* <img src={comm.icon} alt="" /> */}
-                                <span>{comm.short}</span>
+                                <img src={comm.icon} alt={comm.name} className="community-svg" />
                             </div>
 
                             <div className="community-info">

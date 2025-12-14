@@ -233,12 +233,14 @@
     flex-shrink: 0;
 }
 
-.community-icon span {
+.community-svg {
+    width: 60%;
+    height: 60%;
     transform: rotate(-45deg);
-    color: white;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: lowercase;
+    /* Counteract parent rotation */
+    filter: brightness(0) invert(1);
+    /* Force white */
+    object-fit: contain;
 }
 
 .community-info {

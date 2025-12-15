@@ -13,10 +13,11 @@ const Events = () => {
     const [loadingDone, setLoadingDone] = useState(false);
 
     useEffect(() => {
+        document.title = "events | acm at ucsc";
         const fetchEvents = async () => {
+            // ... existing fetch logic
             try {
                 const response = await axios.get('/api/calendar');
-                // const response = await axios.get('http://localhost:8000/calendar/events'); 
                 setEvents(response.data);
                 setLoadingDone(true);
             } catch (err) {
@@ -39,8 +40,8 @@ const Events = () => {
 
     return (
         <div>
+            <Navbar />
             <div className="event-layout">
-                <Navbar />
                 <main className="event-main-content event-wrapper">
                     <section className="event-info-section">
                         <h1 className="event-header">events</h1>

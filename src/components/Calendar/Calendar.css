@@ -91,17 +91,90 @@
     font-weight: 800;
 }
 
-/* Existing calendar styles... */
-.calendar-container {
+
+/* Layout Styles */
+.calendar-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+    /* Ensure both have same height */
     height: 850px;
+    /* Fixed height for the container */
+}
+
+/* Side Panel Styles */
+.event-side-panel {
+    width: 300px;
+    /* Fixed width */
+    flex-shrink: 0;
     background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-detail-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.event-detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #475569;
+}
+
+.event-detail-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.event-detail-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.event-detail-description {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.no-event-selected {
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 50%;
+    font-size: 1.1rem;
+}
+
+/* Calendar Container (Right Side) */
+.calendar-container {
+    flex: 1;
+    /* Take remaining space */
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    /* Match wrapper height */
 }
 
 .rbc-calendar {
     font-family: 'Inter', sans-serif;
+    height: 100%;
 }
 
 .rbc-toolbar button {
@@ -119,107 +192,4 @@
 
 .rbc-toolbar button:hover {
     background-color: #f3f4f6;
-}
-
-/* Modal Styles */
-.event-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Dimmed background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    /* Ensure on top */
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.2s ease-out;
-}
-
-.event-modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    position: relative;
-    animation: slideUp 0.3s ease-out;
-}
-
-.event-modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #94a3b8;
-    transition: color 0.2s;
-}
-
-.event-modal-close:hover {
-    color: #475569;
-}
-
-.event-modal-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #0f172a;
-    line-height: 1.2;
-}
-
-.event-modal-detail {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    color: #475569;
-}
-
-.event-modal-icon {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    width: 24px;
-    text-align: center;
-}
-
-.event-modal-text {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.event-modal-description {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-    font-size: 0.95rem;
-    color: #334155;
-    line-height: 1.6;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }

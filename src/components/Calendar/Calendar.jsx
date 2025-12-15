@@ -112,55 +112,56 @@ const Calendar = ({ events }) => {
         setSelectedEvent(event);
     };
 
-    const handleCloseModal = () => {
-        setSelectedEvent(null);
-    };
-
     return (
-        <div className="calendar-container">
-            <BigCalendar
-                localizer={localizer}
-                events={formattedEvents}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 800 }}
-                components={{
-                    toolbar: CustomToolbar
-                }}
-                eventPropGetter={eventStyleGetter}
-                views={['month', 'week', 'day', 'agenda']}
-                onSelectEvent={handleSelectEvent}
-            />
+        <div className="calendar-wrapper">
+            <div className="event-side-panel">
+                {selectedEvent ? (
+                    <>
+                        <h2 className="event-detail-title">{selectedEvent.title}</h2>
 
-            {selectedEvent && (
-                <div className="event-modal-overlay" onClick={handleCloseModal}>
-                    <div className="event-modal-content" onClick={e => e.stopPropagation()}>
-                        <button className="event-modal-close" onClick={handleCloseModal}>&times;</button>
-
-                        <h2 className="event-modal-title">{selectedEvent.title}</h2>
-
-                        <div className="event-modal-detail">
-                            <span className="event-modal-icon">🕒</span>
-                            <span className="event-modal-text">
-                                {moment(selectedEvent.start).format('MMMM Do YYYY, h:mm a')} - {moment(selectedEvent.end).format('h:mm a')}
+                        <div className="event-detail-item">
+                            <span className="event-detail-icon">🕒</span>
+                            <span className="event-detail-text">
+                                {moment(selectedEvent.start).format('MMMM Do YYYY')}<br />
+                                {moment(selectedEvent.start).format('h:mm a')} - {moment(selectedEvent.end).format('h:mm a')}
                             </span>
                         </div>
 
                         {selectedEvent.location && (
-                            <div className="event-modal-detail">
-                                <span className="event-modal-icon">📍</span>
-                                <span className="event-modal-text">{selectedEvent.location}</span>
+                            <div className="event-detail-item">
+                                <span className="event-detail-icon">📍</span>
+                                <span className="event-detail-text">{selectedEvent.location}</span>
                             </div>
                         )}
 
                         {selectedEvent.description && (
-                            <div className="event-modal-description">
+                            <div className="event-detail-description">
                                 {selectedEvent.description}
                             </div>
                         )}
+                    </>
+                ) : (
+                    <div className="no-event-selected">
+                        <p>Select an event to view details</p>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
+
+            <div className="calendar-container">
+                <BigCalendar
+                    localizer={localizer}
+                    events={formattedEvents}
+                    startAccessor="start"
+                    endAccessor="end"
+                    style={{ height: '100%' }}
+                    components={{
+                        toolbar: CustomToolbar
+                    }}
+                    eventPropGetter={eventStyleGetter}
+                    views={['month', 'week', 'day', 'agenda']}
+                    onSelectEvent={handleSelectEvent}
+                />
+            </div>
         </div>
     );
 };

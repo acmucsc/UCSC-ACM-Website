@@ -38,7 +38,12 @@ const teamMembers = [
   { title: "Coordinator", name: "Placeholder", community: "Research", linkedin: "https://linkedin.com", email: "research@acmucsc.org" },
 ];
 
+import { useEffect } from 'react';
+
 const About = () => {
+  useEffect(() => {
+    document.title = "about | acm at ucsc";
+  }, []);
   const [selectedCommunity, setSelectedCommunity] = useState("Hacks");
 
   const filteredMembers = teamMembers.filter(member => member.community === selectedCommunity);

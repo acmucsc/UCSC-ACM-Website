@@ -1,37 +1,213 @@
-.meet-the-team {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
+/* Main Container */
+.meet-the-team-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  padding-top: 80px;
+}
+
+.meet-the-team-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 60px 20px;
+  gap: 60px;
+  position: relative;
+}
+
+/* Sidebar Styling */
+.sidebar-nav {
+  flex-shrink: 0;
+  width: 100px;
+  /* Adjust as needed */
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 120px;
+  /* Below navbar */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebar-icon-wrapper {
+  width: 60px;
+  /* Reduced size slightly to fit diamond rotation */
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: rotate(45deg);
+  /* Diamond shape */
+  margin: 10px 0;
+}
+
+.sidebar-icon-wrapper:hover {
+  transform: scale(1.1) rotate(45deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-icon-img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transform: rotate(-45deg);
+  /* Counter-rotate icon */
+}
+
+/* Main Content Area */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: black;
+  text-transform: lowercase;
+}
+
+.intro-text {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 80px;
+  line-height: 1.6;
+}
+
+.committees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  /* More space between sections */
+}
+
+.committee-section {
+  padding: 20px 0;
+  scroll-margin-top: 100px;
+  /* Correct scroll position */
+}
+
+.committee-content {
+  text-align: center;
+  /* Center align by default */
+}
+
+/* Header with Gradient Effect */
+.committee-header {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 40px;
+  /* Make space for wide gradient */
+}
+
+.title-gradient-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  /* Wide */
+  height: 150px;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.8;
+}
+
+.committee-title {
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
+  /* Larger */
+  font-weight: 900;
+  color: black !important;
+  text-transform: lowercase;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.committee-short-desc {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.committee-long-desc {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Separator Styles */
+.committee-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0.6;
+  margin-top: 60px;
+}
+
+.separator-line {
+  height: 2px;
+  width: 100px;
+  border-radius: 2px;
+}
+
+.separator-dot {
+  width: 12px;
+  height: 12px;
+  border: 3px solid;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .meet-the-team-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .main-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 30px;
+
+  .sidebar-nav {
+    width: 100%;
+    overflow-x: auto;
+    /* Horizontal scroll if many */
+    padding-bottom: 20px;
   }
-  
-  .team-photo-placeholder {
-    background-color: #dcdcdc;
-    text-align: center;
-    padding: 50px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #333;
+
+  .sidebar-sticky {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
   }
-  
-  .sub-title {
-    color: var(--blue);
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+
+  .sidebar-icon-wrapper {
+    width: 60px;
+    height: 60px;
   }
-  
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
+
+  .sidebar-icon-img {
+    width: 30px;
+    height: 30px;
   }
-  
+}

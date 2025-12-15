@@ -12,6 +12,7 @@ import './Events.css'
 const Events = () => {
     const [events, setEvents] = useState([]);
     const [loadingDone, setLoadingDone] = useState(false);
+    const [showPast, setShowPast] = useState(false);
 
     useEffect(() => {
         const fetchEvents = async () => {

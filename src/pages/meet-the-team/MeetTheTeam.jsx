@@ -96,13 +96,12 @@ const MeetTheTeam = () => {
 
                   </div>
 
-                  {index < communities.length - 1 && (
-                    <div className="committee-separator">
-                      <div className="separator-line" style={{ background: comm.gradient }}></div>
-                      <div className="separator-dot" style={{ borderColor: comm.color }}></div>
-                      <div className="separator-line" style={{ background: comm.gradient }}></div>
-                    </div>
-                  )}
+                  {/* Separator - Now shown for ALL items including the last one */}
+                  <div className="committee-separator">
+                    <div className="separator-line" style={{ background: comm.gradient }}></div>
+                    <div className="separator-dot" style={{ borderColor: comm.color }}></div>
+                    <div className="separator-line" style={{ background: comm.gradient }}></div>
+                  </div>
                 </div>
               );
             })}

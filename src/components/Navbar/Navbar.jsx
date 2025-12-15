@@ -29,8 +29,8 @@ const Navbar = () => {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
+                            <li><Link to="/committees">Committees</Link></li>
                             <li><Link to="/events">Events</Link></li>
-                            <li><Link to="/team">Team</Link></li>
                         </ul>
                     </nav>
                 </div>
@@ -44,9 +44,9 @@ const Navbar = () => {
                     <div className="header-main-right">
                         <nav className="desktop-nav">
                             <ul>
-                                <li><Link to="/team">committees</Link></li>
-                                <li><Link to="/events">events</Link></li>
                                 <li><Link to="/about">about</Link></li>
+                                <li><Link to="/committees">committees</Link></li>
+                                <li><Link to="/events">events</Link></li>
                             </ul>
                         </nav>
 

@@ -61,7 +61,7 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link to="/about">About</Link></li>
             <li><Link to="/events">Events</Link></li>
-            <li><Link to="/team">Committees</Link></li>
+            <li><Link to="/committees">Committees</Link></li>
           </ul>
 
           {/* Powered by Vercel Badge */}

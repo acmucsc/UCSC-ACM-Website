@@ -47,9 +47,12 @@ const CustomToolbar = (toolbar) => {
     return (
         <div className="rbc-toolbar-container">
             <div className="rbc-toolbar-top-row">
-                <input type="text" placeholder="Search Events" className="calendar-search-input" />
-                <button className="calendar-action-btn">search</button>
-                <button className="calendar-action-btn filter-btn">filter <span className="arrow-down">▼</span></button>
+                <div className="toolbar-search-group">
+                    <input type="text" placeholder="Search Events" className="calendar-search-input" />
+                    <button className="calendar-action-btn">search</button>
+                    <button className="calendar-action-btn filter-btn">filter <span className="arrow-down">▼</span></button>
+                </div>
+                <span className="calendar-helper-text">click on an event to see more!</span>
             </div>
 
             <div className="rbc-toolbar-bottom-row">

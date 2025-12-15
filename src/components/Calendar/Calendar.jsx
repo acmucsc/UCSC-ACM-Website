@@ -106,6 +106,16 @@ const Calendar = ({ events }) => {
         };
     };
 
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const handleSelectEvent = (event) => {
+        setSelectedEvent(event);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedEvent(null);
+    };
+
     return (
         <div className="calendar-container">
             <BigCalendar
@@ -119,7 +129,38 @@ const Calendar = ({ events }) => {
                 }}
                 eventPropGetter={eventStyleGetter}
                 views={['month', 'week', 'day', 'agenda']}
+                onSelectEvent={handleSelectEvent}
             />
+
+            {selectedEvent && (
+                <div className="event-modal-overlay" onClick={handleCloseModal}>
+                    <div className="event-modal-content" onClick={e => e.stopPropagation()}>
+                        <button className="event-modal-close" onClick={handleCloseModal}>&times;</button>
+
+                        <h2 className="event-modal-title">{selectedEvent.title}</h2>
+
+                        <div className="event-modal-detail">
+                            <span className="event-modal-icon">🕒</span>
+                            <span className="event-modal-text">
+                                {moment(selectedEvent.start).format('MMMM Do YYYY, h:mm a')} - {moment(selectedEvent.end).format('h:mm a')}
+                            </span>
+                        </div>
+
+                        {selectedEvent.location && (
+                            <div className="event-modal-detail">
+                                <span className="event-modal-icon">📍</span>
+                                <span className="event-modal-text">{selectedEvent.location}</span>
+                            </div>
+                        )}
+
+                        {selectedEvent.description && (
+                            <div className="event-modal-description">
+                                {selectedEvent.description}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

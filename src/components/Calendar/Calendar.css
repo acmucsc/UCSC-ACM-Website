@@ -16,7 +16,7 @@
     flex: 1;
     padding: 8px 16px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 50px;
     font-size: 14px;
     outline: none;
     transition: all 0.2s;
@@ -28,67 +28,105 @@
 }
 
 .calendar-action-btn {
-    padding: 8px 16px;
+    padding: 8px 20px;
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border: 2px solid #ff9f43;
+    /* Hacks Orange */
+    border-radius: 50px;
     font-size: 14px;
-    font-weight: 500;
-    color: #475569;
+    font-weight: 700;
+    color: #ff9f43;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .calendar-action-btn:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
+    background: #ff9f43;
+    color: white;
 }
+
+/* Filter button specific style */
+.calendar-action-btn.filter-btn {
+    border-color: #ff6b6b;
+    /* Research Pink */
+    color: #ff6b6b;
+}
+
+.calendar-action-btn.filter-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
 
 .rbc-toolbar-bottom-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    /* responsive safety */
+    gap: 10px;
 }
 
 .rbc-btn-group {
     display: flex;
-    gap: 5px;
+    gap: 8px;
 }
 
-.nav-btn,
-.view-btn {
+.nav-btn {
     padding: 8px 16px;
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border: 2px solid #54a0ff;
+    /* Learn Blue */
+    border-radius: 50px;
     font-size: 14px;
-    font-weight: 500;
-    color: #475569;
+    font-weight: 700;
+    color: #54a0ff;
     cursor: pointer;
     transition: all 0.2s;
     text-transform: capitalize;
 }
 
-.nav-btn:hover,
+.nav-btn:hover {
+    background: #54a0ff;
+    color: white;
+}
+
+.view-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #5f27cd;
+    /* Alumni Purple */
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #5f27cd;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
 .view-btn:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
+    background: #5f27cd;
+    color: white;
 }
 
 .view-btn.active {
-    background: #2563eb;
+    background: #5f27cd;
     color: white;
-    border-color: #2563eb;
+    border-color: #5f27cd;
+    box-shadow: 0 4px 6px -1px rgba(95, 39, 205, 0.3);
 }
 
 .rbc-toolbar-label {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #1e293b;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .rbc-toolbar-label-text b {
     font-weight: 800;
+    color: #0f172a;
 }
 
 
@@ -97,21 +135,26 @@
     display: flex;
     gap: 20px;
     width: 100%;
+    max-width: 1100px;
+    /* Constrained width */
+    margin: 0 auto;
+    /* Centered */
     align-items: stretch;
-    /* Ensure both have same height */
-    height: 850px;
-    /* Fixed height for the container */
+    height: 700px;
+    /* Reduced height */
 }
 
 /* Side Panel Styles */
 .event-side-panel {
-    width: 300px;
-    /* Fixed width */
+    width: 250px;
+    /* Slightly narrower */
     flex-shrink: 0;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    border-radius: 20px;
+    /* More rounded */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -123,73 +166,73 @@
     margin-bottom: 20px;
     color: #0f172a;
     line-height: 1.2;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .event-detail-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     color: #475569;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .event-detail-icon {
-    margin-right: 10px;
+    margin-right: 12px;
     font-size: 1.2rem;
     width: 24px;
     text-align: center;
 }
 
 .event-detail-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 .event-detail-description {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-    font-size: 0.95rem;
+    border-top: 2px solid #f1f5f9;
+    font-size: 0.9rem;
     color: #334155;
     line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .no-event-selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     color: #94a3b8;
     text-align: center;
-    margin-top: 50%;
-    font-size: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
 }
 
 /* Calendar Container (Right Side) */
 .calendar-container {
     flex: 1;
-    /* Take remaining space */
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    border-radius: 20px;
+    /* More rounded */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
     height: 100%;
-    /* Match wrapper height */
 }
 
 .rbc-calendar {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    /* Consistent font */
     height: 100%;
 }
 
+/* Clean up default big calendar buttons if they appear */
 .rbc-toolbar button {
-    border-radius: 6px;
-    font-size: 14px;
-    transition: all 0.2s;
-}
-
-.rbc-toolbar button:active,
-.rbc-toolbar button.rbc-active {
-    background-color: #2563eb;
-    color: white;
-    border-color: #2563eb;
-}
-
-.rbc-toolbar button:hover {
-    background-color: #f3f4f6;
+    border: none !important;
+    /* Override default borders if strictly targeting component generated buttons */
+    /* We are using custom toolbar components mostly, so this is fallback */
 }

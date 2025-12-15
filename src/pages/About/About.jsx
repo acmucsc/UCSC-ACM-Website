@@ -19,6 +19,7 @@ const teamMembers = [
   { title: "Sponsorship", name: "Placeholder", community: "Hacks", linkedin: "https://linkedin.com", email: "hacks@acmucsc.org" },
   { title: "Member", name: "Placeholder", community: "Hacks", linkedin: "https://linkedin.com", email: "hacks@acmucsc.org" },
   { title: "Member", name: "Placeholder", community: "Hacks", linkedin: "https://linkedin.com", email: "hacks@acmucsc.org" },
+  { title: "Member", name: "Placeholder", community: "Hacks", linkedin: "https://linkedin.com", email: "hacks@acmucsc.org" }, // Added to make even (6)
 
   // Learn
   { title: "Learn Lead", name: "Placeholder", community: "Learn", linkedin: "https://linkedin.com", email: "learn@acmucsc.org" },
@@ -32,6 +33,7 @@ const teamMembers = [
   { title: "Dev Lead", name: "Placeholder", community: "Dev", linkedin: "https://linkedin.com", email: "dev@acmucsc.org" },
   { title: "Frontend Dev", name: "Placeholder", community: "Dev", linkedin: "https://linkedin.com", email: "dev@acmucsc.org" },
   { title: "Backend Dev", name: "Placeholder", community: "Dev", linkedin: "https://linkedin.com", email: "dev@acmucsc.org" },
+  { title: "Dev Member", name: "Placeholder", community: "Dev", linkedin: "https://linkedin.com", email: "dev@acmucsc.org" }, // Added to make even (4)
 
   // Research
   { title: "Research Lead", name: "Placeholder", community: "Research", linkedin: "https://linkedin.com", email: "research@acmucsc.org" },
@@ -58,11 +60,16 @@ const About = () => {
         <section className="about-section about-board">
 
           <div className="about-intro-wrapper">
-            <div className="about-text-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-              <h2 className="lowercase-title" style={{ textAlign: 'center' }}>about us</h2>
-              <p className="about-intro-paragraph" style={{ textAlign: 'center' }}>
+            <div className="about-text-content">
+              <h2 className="lowercase-title">about us</h2>
+              <p className="about-intro-paragraph">
                 The Association for Computing Machinery (ACM) at UCSC is the largest computer science community on campus. We are a student-run organization dedicated to fostering a collaborative environment where students can grow their technical skills, build professional networks, and innovate together. Through our diverse committees—Hacks, Learn, Alumni, Dev, and Research—we host hackathons, technical workshops, industry panels, and social events that bridge the gap between academic learning and real-world application. No matter your major or background, if you have a passion for technology, there is a place for you here.
               </p>
+            </div>
+
+            {/* Rainbow Gradient Diamond Placeholder */}
+            <div className="acm-diamond-container">
+              <div className="about-rainbow-diamond"></div>
             </div>
           </div>
 
@@ -103,11 +110,16 @@ const About = () => {
                 <h3 className="about-board-name">{member.name}</h3>
 
                 <div className="about-board-img-container">
-                  <img
-                    src={acmLogo}
-                    alt={`${member.name} - ${member.title}`}
-                    className="about-board-logo"
+                  <div
+                    className="about-board-logo-placeholder"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      background: themeColor,
+                      opacity: 0.2
+                    }}
                   />
+                  {/* <img src={acmLogo} ... /> removed as requested */}
                 </div>
 
                 <p className="about-board-role">{member.title}</p>

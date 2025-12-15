@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import './MeetTheTeam.css';
-import TeamMemberCard from '../../components/TeamMemberCard/TeamMemberCard';
+
 
 const MeetTheTeam = () => {
   useEffect(() => {
@@ -63,39 +63,49 @@ const MeetTheTeam = () => {
           </p>
 
           <div className="committees-list">
-            {communities.map((comm, index) => (
-              <div key={index} id={comm.short} className="committee-section">
+            {communities.map((comm, index) => {
+              const isReverse = index % 2 !== 0; // Even=Normal (Text Left), Odd=Reverse (Text Right)
 
-                <div className="committee-content">
-                  <div className="committee-header">
-                    {/* Radial Gradient Background */}
-                    <div
-                      className="title-gradient-bg"
-                      style={{
-                        background: `radial-gradient(ellipse at center, ${comm.color}20 0%, ${comm.color}00 70%)`,
-                        /* Fallback or base color if needed, simplified for clarity */
-                        background: `radial-gradient(ellipse closest-side at center, ${comm.color}80 0%, transparent 100%)`
-                      }}
-                    />
+              return (
+                <div key={index} id={comm.short} className="committee-section">
 
-                    <h2 className="committee-title">
-                      {comm.name.toLowerCase()}
-                    </h2>
+                  <div className={`committee-section-flex ${isReverse ? 'reverse' : ''}`}>
+
+                    {/* Text Content */}
+                    <div className="committee-content">
+                      <div className="committee-header">
+                        <div
+                          className="title-gradient-bg"
+                          style={{
+                            background: `radial-gradient(ellipse closest-side at center, ${comm.color}80 0%, transparent 100%)`
+                          }}
+                        />
+                        <h2 className="committee-title">{comm.name.toLowerCase()}</h2>
+                      </div>
+                      <h3 className="committee-short-desc">{comm.description}</h3>
+                      <p className="committee-long-desc">{comm.longDescription}</p>
+                    </div>
+
+                    {/* Diamond Visual */}
+                    <div className="committee-diamond-visual">
+                      <div className="committee-diamond-backdrop" style={{ background: comm.color }}></div>
+                      <div className="committee-diamond-border" style={{ '--gradient': comm.gradient }}>
+                        <div className="committee-diamond-inner" style={{ '--gradient': comm.gradient }}></div>
+                      </div>
+                    </div>
+
                   </div>
 
-                  <h3 className="committee-short-desc">{comm.description}</h3>
-                  <p className="committee-long-desc">{comm.longDescription}</p>
+                  {index < communities.length - 1 && (
+                    <div className="committee-separator">
+                      <div className="separator-line" style={{ background: comm.gradient }}></div>
+                      <div className="separator-dot" style={{ borderColor: comm.color }}></div>
+                      <div className="separator-line" style={{ background: comm.gradient }}></div>
+                    </div>
+                  )}
                 </div>
-
-                {index < communities.length - 1 && (
-                  <div className="committee-separator">
-                    <div className="separator-line" style={{ background: comm.gradient }}></div>
-                    <div className="separator-dot" style={{ borderColor: comm.color }}></div>
-                    <div className="separator-line" style={{ background: comm.gradient }}></div>
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>

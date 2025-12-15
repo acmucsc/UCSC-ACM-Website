@@ -1,28 +1,44 @@
 @import "tailwindcss";
 
-@font-face { /*to download a font*/
-    font-family: Roboto;
-    src: url(../public/fonts/Roboto-Black.ttf) url(../public/fonts/Roboto-BlackItalic.ttf) url(../public/fonts/Roboto-Bold.ttf) url(../public/fonts/Roboto-BoldItalic.ttf) url(../public/fonts/Roboto-Italic.ttf) url(../public/fonts/Roboto-Light.ttf) url(../public/fonts/Roboto-LightItalic.ttf) url(../public/fonts/Roboto-Medium.ttf) url(../public/fonts/Roboto-MediumItalic.ttf) url(../public/fonts/Roboto-Regular.ttf) url(../public/fonts/Roboto-Thin.ttf) url(../public/fonts/Roboto-ThinItalic.ttf);
+@font-face {
+  /*to download a font*/
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto-Black.ttf) url(../public/fonts/Roboto-BlackItalic.ttf) url(../public/fonts/Roboto-Bold.ttf) url(../public/fonts/Roboto-BoldItalic.ttf) url(../public/fonts/Roboto-Italic.ttf) url(../public/fonts/Roboto-Light.ttf) url(../public/fonts/Roboto-LightItalic.ttf) url(../public/fonts/Roboto-Medium.ttf) url(../public/fonts/Roboto-MediumItalic.ttf) url(../public/fonts/Roboto-Regular.ttf) url(../public/fonts/Roboto-Thin.ttf) url(../public/fonts/Roboto-ThinItalic.ttf);
 }
-html, body {
-    overscroll-behavior: none;
-  }
+
+html,
 body {
-  font-family: 'Roboto', sans-serif;
+  overscroll-behavior: none;
 }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #4b5563;
+}
+
 body:after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -1;
-    content: url(/img/linkedin-color.webp) url(/img/github-color.webp) url(/img/instagram-color.webp) url(/img/discord-color.webp); /*change when adding icons*/
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(/img/linkedin-color.webp) url(/img/github-color.webp) url(/img/instagram-color.webp) url(/img/discord-color.webp);
+  /*change when adding icons*/
 }
+
+/* Global Header Styles */
+h1,
+h2,
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  color: #111827;
+}
+
 :root {
-    --blue: #008DD0;
-    --blue-hover: #0075ac;
-    --white: #ffffff;
-    --black: #000000;
-    /* font-size: 62.5%; */
+  --blue: #008DD0;
+  --blue-hover: #0075ac;
+  --white: #ffffff;
+  --black: #000000;
+  /* font-size: 62.5%; */
 }
-  

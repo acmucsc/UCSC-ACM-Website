@@ -18,17 +18,23 @@
 
 /* About Intro Section */
 .about-intro-wrapper {
-  display: block;
-  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1000px;
   margin: 0 auto 5rem auto;
   padding: 0 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .about-text-content {
   flex: 1;
-  max-width: 600px;
+  max-width: 500px;
+  /* Constrain text width */
   margin: 0 auto;
+  text-align: left;
+  /* Ensure text is left aligned next to image */
 }
 
 .about-intro-paragraph {
@@ -38,6 +44,7 @@
   margin-top: 1.5rem;
   margin-bottom: 0;
   font-family: 'DM Sans', sans-serif;
+  text-align: left;
 }
 
 .lowercase-title {
@@ -47,20 +54,24 @@
   font-family: 'DM Sans', sans-serif;
   text-transform: lowercase;
   margin: 0;
+  text-align: left;
 }
 
 @media (max-width: 900px) {
   .about-intro-wrapper {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
 
   .about-text-content {
     max-width: 100%;
+    text-align: center;
   }
 
   .about-text-content h2,
-  .about-text-content p {
+  .about-text-content p,
+  .lowercase-title {
     text-align: center !important;
   }
 
@@ -269,3 +280,100 @@
     padding-left: 20%;
   }
 }
+
+/* --- Blue Gradient Diamond Card --- */
+.acm-diamond-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  /* Prevent shrinking in flex container */
+}
+
+/* The filled blue backdrop diamond */
+.diamond-backdrop-blue {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: #3b82f6;
+  /* Solid Blue */
+  transform: rotate(45deg);
+  border-radius: 40px;
+  opacity: 0.1;
+  /* Subtle backdrop as requested "like a backdrop" */
+  z-index: 1;
+  top: 10px;
+  left: 30px;
+  /* Offset it slightly */
+}
+
+/* The main diamond with gradient border */
+.diamond-border-blue {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  /* Use a gradient border via pseudo-element or background-clip */
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #f472b6 100%) border-box;
+  border: 6px solid transparent;
+  border-radius: 45px;
+  /* Rounded squircle/diamond */
+  transform: rotate(45deg);
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Clip inner content */
+}
+
+/* Inner content (un-rotated) */
+.diamond-inner-content {
+  width: 100%;
+  /* Ensure it covers the area */
+  height: 100%;
+  transform: rotate(-45deg);
+  /* Counter-rotate */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diamond-inner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* New Gradient Fill Class */
+/* Single Rainbow Diamond */
+.about-rainbow-diamond {
+  width: 260px;
+  height: 260px;
+  transform: rotate(45deg);
+  border-radius: 45px;
+  background: linear-gradient(135deg,
+      #ef4444,
+      #f97316,
+      #eab308,
+      #22c55e,
+      #06b6d4,
+      #6366f1,
+      #a855f7,
+      #ec4899);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.about-rainbow-diamond:hover {
+  transform: rotate(45deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Obsolete diamond classes removed/commented if needed, or left for reference if used elsewhere (unlikely) */
+/* .diamond-backdrop-blue, .diamond-border-blue, .diamond-inner-content, .diamond-gradient-fill { display: none; } */

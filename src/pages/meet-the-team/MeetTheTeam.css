@@ -26,36 +26,40 @@
 
 .sidebar-sticky {
   position: sticky;
-  top: 120px;
+  top: 100px;
+  /* Adjusted top */
   /* Below navbar */
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
+  /* Reduced gap */
 }
 
 .sidebar-icon-wrapper {
-  width: 60px;
-  /* Reduced size slightly to fit diamond rotation */
-  height: 60px;
+  width: 55px;
+  /* Increased from 45px */
+  height: 55px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   transform: rotate(45deg);
   /* Diamond shape */
-  margin: 10px 0;
+  margin: 8px 0;
+  /* Slightly more margin */
 }
 
 .sidebar-icon-wrapper:hover {
   transform: scale(1.1) rotate(45deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-icon-img {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  /* Increased from 22px */
+  height: 28px;
   filter: brightness(0) invert(1);
   transform: rotate(-45deg);
   /* Counter-rotate icon */
@@ -70,16 +74,20 @@
 
 .main-title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  /* Standard title size */
   font-weight: 800;
   margin-bottom: 20px;
-  color: black;
+  color: #111827;
+  /* Standard dark header */
   text-transform: lowercase;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .intro-text {
   text-align: center;
-  color: #e2e8f0;
+  color: #4b5563;
+  /* Standard body text */
   font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 80px;
@@ -89,28 +97,95 @@
 .committees-list {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 120px;
   /* More space between sections */
 }
 
 .committee-section {
-  padding: 20px 0;
   scroll-margin-top: 100px;
   /* Correct scroll position */
 }
 
-.committee-content {
-  text-align: center;
-  /* Center align by default */
+/* Flex Container for Zig-Zag Layout */
+.committee-section-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
 
-/* Header with Gradient Effect */
+/* Alternating reverses */
+.committee-section-flex.reverse {
+  flex-direction: row-reverse;
+}
+
+.committee-content {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+}
+
+.committee-section-flex.reverse .committee-content {
+  text-align: right;
+}
+
+/* Diamond Visual for Committees */
+.committee-diamond-visual {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.committee-diamond-backdrop {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  transform: rotate(45deg);
+  border-radius: 35px;
+  opacity: 0.15;
+  top: 15px;
+  left: 15px;
+  /* Default offset */
+}
+
+.committee-diamond-border {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(white, white) padding-box,
+    var(--gradient) border-box;
+  /* Dynamic gradient via inline variable or reused class */
+  border: 5px solid transparent;
+  border-radius: 40px;
+  transform: rotate(45deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.committee-diamond-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  /* Dynamic gradient fill */
+  opacity: 0.9;
+  transform: rotate(0deg);
+  /* No counter rotation needed for solid fill? Or maybe texture? */
+}
+
+/* Header with Gradient Effect - Adjusted for alignment */
 .committee-header {
   position: relative;
   display: inline-block;
   margin-bottom: 20px;
-  padding: 10px 40px;
-  /* Make space for wide gradient */
+  padding: 10px 0;
+  /* Reduced padding since alignment calls for it */
 }
 
 .title-gradient-bg {
@@ -124,19 +199,20 @@
   z-index: 0;
   border-radius: 50%;
   filter: blur(20px);
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .committee-title {
   position: relative;
   z-index: 1;
-  font-size: 3.5rem;
-  /* Larger */
-  font-weight: 900;
-  color: black !important;
+  font-size: 2.5rem;
+  /* Standard title size */
+  font-weight: 800;
+  color: #111827 !important;
   text-transform: lowercase;
   margin: 0;
   line-height: 1.1;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .committee-short-desc {
@@ -152,9 +228,10 @@
   font-size: 1.1rem;
   color: #94a3b8;
   line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  /* Let flex container constrain */
 }
+
 
 /* Separator Styles */
 .committee-separator {
@@ -163,7 +240,7 @@
   justify-content: center;
   gap: 20px;
   opacity: 0.6;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .separator-line {
@@ -173,12 +250,16 @@
 }
 
 .separator-dot {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  /* Slightly larger */
+  height: 16px;
   border: 3px solid;
-  border-radius: 50%;
+  border-radius: 4px;
+  /* Squircle/Diamond */
   background: transparent;
   box-shadow: 0 0 10px currentColor;
+  transform: rotate(45deg);
+  /* Diamond rotation */
 }
 
 /* Responsive */
@@ -186,6 +267,18 @@
   .meet-the-team-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .committee-section-flex {
+    flex-direction: column !important;
+    /* Force column on mobile */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .committee-section-flex.reverse .committee-content,
+  .committee-content {
+    text-align: center;
   }
 
   .sidebar-nav {
@@ -199,15 +292,16 @@
     position: static;
     flex-direction: row;
     justify-content: center;
+    top: 0;
   }
 
   .sidebar-icon-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .sidebar-icon-img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 }

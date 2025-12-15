@@ -21,7 +21,7 @@
 .event-layout h2,
 .event-layout h3 {
     line-height: 1.5;
-    color: var(--black);
+    color: #111827;
     font-family: 'DM Sans', sans-serif;
     font-weight: 800;
     text-transform: lowercase;
@@ -41,8 +41,10 @@
 }
 
 .event-header {
-    font-size: 3.75rem;
+    font-size: 2.5rem;
+    /* Standard */
     margin-bottom: 1rem;
+    color: #111827;
 }
 
 .event-info-section {

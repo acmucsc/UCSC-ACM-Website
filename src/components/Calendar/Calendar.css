@@ -1,3 +1,96 @@
+/* Toolbar Styles */
+.rbc-toolbar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.rbc-toolbar-top-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.calendar-search-input {
+    flex: 1;
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.calendar-search-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.calendar-action-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar-action-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.rbc-toolbar-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rbc-btn-group {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-btn,
+.view-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
+.nav-btn:hover,
+.view-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.view-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.rbc-toolbar-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.rbc-toolbar-label-text b {
+    font-weight: 800;
+}
+
 /* Existing calendar styles... */
 .calendar-container {
     height: 850px;

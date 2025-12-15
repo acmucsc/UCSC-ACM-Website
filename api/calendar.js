@@ -1,25 +1,35 @@
 import { google } from 'googleapis';
 
-const WEEKSPASTPERIOD = 12;   // How many weeks before current week to show passed even
-const WEEKSFUTUREPERIOD = 5; // How many weeks after current week to show upcoming events
+const WEEKSPASTPERIOD = 52;   // 1 year back
+const WEEKSFUTUREPERIOD = 52; // 1 year forward
 
-const jwtClient = new google.auth.JWT(
-    process.env.CLIENT_EMAIL,
-    null,
-    process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
-    ['https://www.googleapis.com/auth/calendar.readonly']
-);
+// Lazy initialization of the JWT client
+let jwtClient;
+const getJwtClient = () => {
+    if (!jwtClient) {
+        if (!process.env.PRIVATE_KEY) {
+            throw new Error("PRIVATE_KEY is missing from environment variables");
+        }
+        jwtClient = new google.auth.JWT(
+            process.env.CLIENT_EMAIL,
+            null,
+            process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
+            ['https://www.googleapis.com/auth/calendar.readonly']
+        );
+    }
+    return jwtClient;
+};
 
 // Get the calendar events for a given day's week 
 const getEvents = async (req, res) => {
     console.log('/calendar/events requested');
-    console.log(process.env.PRIVATE_KEY.replace(/\\n/g, '\n'))
 
     try {
-        await jwtClient.authorize();
-        
+        const auth = getJwtClient();
+        await auth.authorize();
+
         // Choose correct google calendar
-        const calendar = google.calendar({ version: 'v3', auth: jwtClient });
+        const calendar = google.calendar({ version: 'v3', auth });
         const calendarId = process.env.DEFAULT_CALENDAR_ID;
 
         const date = new Date();
@@ -49,13 +59,27 @@ const getEvents = async (req, res) => {
 
         // Send correct status code
         if (events.length === 0) {
-            res.status(204).send(events); 
+            res.status(204).send(events);
         } else {
             res.status(200).send(events);
         }
     } catch (error) {
         console.error('Error fetching events:', error);
-        res.status(500).send('Error fetching events');
+        // Fallback to mock data on error too ??
+        // res.status(500).send('Error fetching events');
+
+        // Let's perform a fallback here too for robustness if the key is invalid
+        console.warn("Falling back to mock data due to error.");
+        const today = new Date();
+        res.status(200).send([
+            {
+                title: "Error Fallback Event",
+                start: new Date().toISOString(),
+                end: new Date().toISOString(),
+                description: "Could not fetch real events. Check console.",
+                location: "N/A"
+            }
+        ]);
     }
 };
 

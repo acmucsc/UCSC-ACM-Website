@@ -4,7 +4,6 @@ import { Bars } from 'react-loading-icons'
 
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
-import CalendarEvent from "../../components/CalendarEvent/CalendarEvent"
 import Calendar from "../../components/Calendar/Calendar"
 
 import './Events.css'
@@ -12,7 +11,6 @@ import './Events.css'
 const Events = () => {
     const [events, setEvents] = useState([]);
     const [loadingDone, setLoadingDone] = useState(false);
-    const [showPast, setShowPast] = useState(false);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -52,62 +50,13 @@ const Events = () => {
                     </section>
 
                     <section className="event-calendar-section">
-                        <h2 className="event-calendar-quarter-text">upcoming events</h2>
-                        <div className="event-calendar-quarter-container">
-                            {upcomingEvents.length > 0 ? (
-                                upcomingEvents.map((event, index) => {
-                                    const startDate = new Date(event.start);
-                                    const endDate = new Date(event.end);
-
-                                    const dateString = `${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`;
-                                    const timeString = `${formatTime(startDate)} - ${formatTime(endDate)}`;
-
-                                    return (
-                                        <CalendarEvent
-                                            key={`upcoming-${index}`}
-                                            title={event.title}
-                                            date={dateString}
-                                            time={timeString || ''}
-                                            location={event.location || ''}
-                                        />
-                                    );
-                                })
-                            ) : (
-                                loadingDone ? (
-                                    <p className="no-events-text">no upcoming events.</p>
-                                ) : (
-                                    <Bars stroke="black" width={80} height={40} />
-                                )
-                            )}
-                        </div>
-                        <h2 className="event-calendar-past-text">past events</h2>
-                        <div className="event-calendar-past-container">
-                            {pastEvents.length > 0 ? (
-                                pastEvents.map((event, index) => {
-                                    const startDate = new Date(event.start);
-                                    const endDate = new Date(event.end);
-
-                                    const dateString = `${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`;
-                                    const timeString = `${formatTime(startDate)} - ${formatTime(endDate)}`;
-
-                                    return (
-                                        <CalendarEvent
-                                            key={`past-${index}`}
-                                            title={event.title}
-                                            date={dateString}
-                                            time={timeString || ''}
-                                            location={event.location || ''}
-                                        />
-                                    );
-                                })
-                            ) : (
-                                loadingDone ? (
-                                    <p className="no-events-text">No upcoming events.</p>
-                                ) : (
-                                    <Bars stroke="black" width={80} height={40} />
-                                )
-                            )}
-                        </div>
+                        {loadingDone ? (
+                            <Calendar events={events} />
+                        ) : (
+                            <div className="loading-container" style={{ display: 'flex', justifyContent: 'center', padding: '50px' }}>
+                                <Bars stroke="black" width={80} height={40} />
+                            </div>
+                        )}
                     </section>
                 </main>
 
@@ -118,30 +67,6 @@ const Events = () => {
 };
 
 // Format the time into a more readable format
-const formatTime = (date) => {
-    let hours = date.getHours();
-    const minutes = date.getMinutes();
-    let ampm = '';
 
-    if (hours >= 12) {
-        ampm = 'PM';
-    } else {
-        ampm = 'AM';
-    }
-
-    hours = hours % 12;
-    if (hours === 0) {
-        hours = 12;
-    }
-
-    let minutesStr = '';
-    if (minutes === 0) {
-        minutesStr = '';
-    } else {
-        minutesStr = `:${minutes.toString().padStart(2, '0')}`;
-    }
-
-    return `${hours}${minutesStr}${ampm}`;
-}
 
 export default Events;

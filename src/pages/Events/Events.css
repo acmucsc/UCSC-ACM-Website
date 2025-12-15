@@ -4,54 +4,44 @@
     min-height: 100vh;
     background-color: var(--white);
 }
+
 .event-wrapper {
     width: 80vw;
     margin: 0 auto;
 }
+
 .event-main-content {
     flex-grow: 1;
 }
-.event-layout h1 {
-    /* font-size: 1.6rem; */
-    line-height: 1.5;
-    color: var(--black);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    text-transform: capitalize;
-}
-.event-layout h2 {
-    /* font-size: 1.6rem; */
-    line-height: 1.5;
-    color: var(--black);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    text-transform: capitalize;
-}
+
+.event-layout h1,
+.event-layout h2,
 .event-layout h3 {
-    /* font-size: 1.6rem; */
     line-height: 1.5;
     color: var(--black);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    text-transform: capitalize;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    text-transform: lowercase;
+    /* Lowercase titles */
 }
-.event-layout p {
-    /* font-size: 1.6rem; */
-    line-height: 1.75;
-    color: var(--black);
-    font-family: 'Roboto', sans-serif;
-}
+
+.event-layout p,
 .event-layout a {
-    /* font-size: 1.6rem; */
     line-height: 1.75;
-    color: var(--black);
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
+    color: #4b5563;
+    font-family: 'DM Sans', sans-serif;
     text-decoration: none;
 }
+
+.event-layout a {
+    cursor: pointer;
+}
+
 .event-header {
     font-size: 3.75rem;
+    margin-bottom: 1rem;
 }
+
 .event-info-section {
     display: flex;
     flex-direction: column;
@@ -59,107 +49,139 @@
     margin-top: 50px;
     width: 100%;
 }
+
 .event-info-section h1 {
-    align-self: baseline;
-    color: var(--black);
+    align-self: center;
+    /* Centered like About page */
+    color: #111827;
 }
+
 .event-info-text-area {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: center;
+    max-width: 800px;
 }
+
 .event-info-text {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
+
 .event-calendar-button {
-    margin-top: 10px;
-    border-radius: 20px;
-    background-color: var(--blue);
-    font-weight: bold;
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--blue-base);
+    border-radius: 50px;
+    background-color: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
     font-size: 1.125rem;
-    color: var(--white);
+    color: var(--blue-base);
     cursor: pointer;
-    padding: 5px 25px;
-    transition: all ease-in-out 200ms;
-    /* box-shadow: 2px 2px 5px #808080; */
+    transition: all 0.2s ease;
 }
+
 .event-calendar-button:hover {
-    background-color: var(--blue-hover);
+    background-color: var(--blue-base);
+    color: var(--white);
+    transform: translateY(-2px);
 }
+
 .event-calendar-section {
     padding-top: 40px;
     width: 100%;
     text-align: center;
 }
+
 .event-calendar-quarter-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0px;
     margin-bottom: 60px;
-    gap: 40px;
+    gap: 2rem;
 }
+
 .event-calendar-quarter-text {
     font-size: 2.5rem;
 }
+
 .event-calendar-past-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 20px 0px;
-    gap: 40px;
+    gap: 2rem;
 }
+
 .event-calendar-past-text {
     font-size: 2.5rem;
 }
+
 .no-events-text {
     font-size: 1.2rem;
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1100px) { /*ipad*/
+@media only screen and (min-width: 700px) and (max-width: 1100px) {
+
+    /*ipad*/
     .event-wrapper {
         width: 90vw;
     }
+
     .event-calendar-past-container {
         gap: 30px;
     }
+
     .event-header {
-        font-size: 3.75rem;
+        font-size: 3.5rem;
     }
+
     .event-info-text {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
+
     .event-calendar-quarter-text {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
+
     .event-calendar-past-text {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
+
     .no-events-text {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 }
-  
-@media only screen and (max-width: 700px) { /*mobile*/
+
+@media only screen and (max-width: 700px) {
+
+    /*mobile*/
     .event-wrapper {
         width: 90vw;
     }
+
     .event-calendar-past-container {
         gap: 20px;
     }
+
     .event-header {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
+
     .event-info-text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
+
     .event-calendar-quarter-text {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+
     .event-calendar-past-text {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+
     .no-events-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }

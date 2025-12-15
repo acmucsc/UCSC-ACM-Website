@@ -181,7 +181,7 @@ const Bio = () => {
                     </div>
 
                     <div className="about-us-section" style={{ marginBottom: '40px' }}>
-                        <h2>about us</h2>
+                        <h2>welcome to ACM at UCSC!</h2>
                         <p>
                             We are the Association for Computing Machinery at UCSC! We are a welcoming community for anyone passionate about computing. whether you're a beginner or an expert, from any major or background, you're welcome here!
                         </p>

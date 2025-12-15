@@ -5,6 +5,7 @@ import { Bars } from 'react-loading-icons'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import CalendarEvent from "../../components/CalendarEvent/CalendarEvent"
+import Calendar from "../../components/Calendar/Calendar"
 
 import './Events.css'
 
@@ -23,7 +24,7 @@ const Events = () => {
                 console.error('Error fetching events:', err);
             }
         };
-    
+
         fetchEvents();
     }, []);
 
@@ -35,7 +36,7 @@ const Events = () => {
         upcomingEvents = events.filter(event => new Date(event.start) >= currentDate);
         pastEvents = events.filter(event => new Date(event.start) < currentDate);
     }
-    
+
 
     return (
         <div>
@@ -43,17 +44,14 @@ const Events = () => {
                 <Navbar />
                 <main className="event-main-content event-wrapper">
                     <section className="event-info-section">
-                        <h1 className="event-header">Events</h1>
+                        <h1 className="event-header">events</h1>
                         <div className="event-info-text-area">
-                            <p className="event-info-text">Find all ACM events below and add them to your own calendar by clicking the button below!</p>
+                            <p className="event-info-text">Find all ACM events below!</p>
                         </div>
-                        <a href="https://calendar.google.com/calendar/u/0/r?cid=santacruz.acm@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <button className="event-calendar-button">Add Calendar</button>
-                        </a>
                     </section>
-                    
+
                     <section className="event-calendar-section">
-                        <h2 className="event-calendar-quarter-text">Upcoming Events</h2>
+                        <h2 className="event-calendar-quarter-text">upcoming events</h2>
                         <div className="event-calendar-quarter-container">
                             {upcomingEvents.length > 0 ? (
                                 upcomingEvents.map((event, index) => {
@@ -75,13 +73,13 @@ const Events = () => {
                                 })
                             ) : (
                                 loadingDone ? (
-                                    <p className="no-events-text">No upcoming events.</p>
+                                    <p className="no-events-text">no upcoming events.</p>
                                 ) : (
                                     <Bars stroke="black" width={80} height={40} />
                                 )
                             )}
                         </div>
-                        <h2 className="event-calendar-past-text">Past Events</h2>
+                        <h2 className="event-calendar-past-text">past events</h2>
                         <div className="event-calendar-past-container">
                             {pastEvents.length > 0 ? (
                                 pastEvents.map((event, index) => {
@@ -99,7 +97,7 @@ const Events = () => {
                                             time={timeString || ''}
                                             location={event.location || ''}
                                         />
-                                        );
+                                    );
                                 })
                             ) : (
                                 loadingDone ? (
@@ -111,7 +109,7 @@ const Events = () => {
                         </div>
                     </section>
                 </main>
-                
+
             </div>
             <Footer className="mt-auto" />
         </div>
@@ -123,25 +121,25 @@ const formatTime = (date) => {
     let hours = date.getHours();
     const minutes = date.getMinutes();
     let ampm = '';
-  
+
     if (hours >= 12) {
         ampm = 'PM';
     } else {
         ampm = 'AM';
     }
-  
+
     hours = hours % 12;
     if (hours === 0) {
         hours = 12;
     }
-  
+
     let minutesStr = '';
     if (minutes === 0) {
         minutesStr = '';
     } else {
         minutesStr = `:${minutes.toString().padStart(2, '0')}`;
     }
-  
+
     return `${hours}${minutesStr}${ampm}`;
 }
 

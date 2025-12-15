@@ -1,5 +1,5 @@
 import React from "react";
-import baskinLogo from "../../assets/baskin.png";
+
 import socials from "../../data/socials";
 import { Link } from "react-router-dom";
 import "./Footer.css";
@@ -81,7 +81,7 @@ const Footer = () => {
           <h3 className="footer-heading">PARTNERS</h3>
           <div className="partner-logos">
             <a href="https://engineering.ucsc.edu/" target="_blank" rel="noopener noreferrer" className="partner-link">
-              <img src={baskinLogo} alt="Baskin Engineering" className="partner-logo baskin" />
+              <img src="/baskin.png" alt="Baskin Engineering" className="partner-logo baskin" />
             </a>
           </div>
         </div>

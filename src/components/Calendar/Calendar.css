@@ -1,0 +1,193 @@
+/* Calendar Container */
+.calendar-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hide default toolbar elements we replaced */
+.rbc-toolbar {
+    display: none !important;
+    /* We render our own toolbar container */
+}
+
+/* Custom Toolbar Styles */
+.rbc-toolbar-container {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Top Row: Search & Filter */
+.rbc-toolbar-top-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.calendar-search-input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-family: 'DM Sans', sans-serif;
+    width: 300px;
+    outline: none;
+    color: #4b5563;
+}
+
+.calendar-action-btn {
+    padding: 0.4rem 1.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #9ca3af;
+    /* Greyish blue like screenshot */
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arrow-down {
+    font-size: 0.7rem;
+}
+
+/* Bottom Row: Navigation & Views */
+.rbc-toolbar-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.rbc-btn-group {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #9ca3af;
+    /* Base for groups */
+}
+
+.nav-btn,
+.view-btn {
+    background-color: #9ca3af;
+    /* Muted blue-grey */
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover,
+.view-btn:hover {
+    background-color: #6b7280;
+}
+
+.nav-btn:not(:last-child),
+.view-btn:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rbc-btn-group>button.active,
+.view-btn.active {
+    background-color: var(--blue-base);
+    /* Active Blue */
+}
+
+/* Month Label */
+.rbc-toolbar-label {
+    font-size: 2.5rem;
+    color: #1f2937;
+    text-transform: capitalize;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.rbc-toolbar-label b {
+    font-weight: 800;
+}
+
+/* Calendar Grid Header (Days of Week) */
+.rbc-month-view .rbc-header {
+    background-color: var(--blue-base);
+    color: white;
+    padding: 0.8rem 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    text-transform: lowercase;
+    /* match screenshot "sun", "mon" */
+}
+
+.rbc-header+.rbc-header {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Grid Cells */
+.rbc-day-bg {
+    background-color: white;
+}
+
+.rbc-off-range-bg {
+    background-color: #e5e7eb;
+    /* Light grey for other month days */
+}
+
+.rbc-date-cell {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-align: right;
+}
+
+.rbc-current .rbc-button-link {
+    color: var(--blue-base);
+    font-weight: bold;
+}
+
+/* Remove default borders for cleaner look if desired, or keep them */
+.rbc-month-view {
+    border: 1px solid #e5e7eb;
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+}
+
+.rbc-month-header {
+    border-radius: 1rem 1rem 0 0;
+    /* Round top corners of header */
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .rbc-toolbar-bottom-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .rbc-toolbar-label {
+        order: -1;
+        /* Move label to top on mobile */
+        font-size: 2rem;
+    }
+
+    .calendar-search-input {
+        width: 100%;
+    }
+
+    .rbc-toolbar-top-row {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}

@@ -6,7 +6,7 @@ import './MeetTheTeam.css';
 
 const MeetTheTeam = () => {
   useEffect(() => {
-    document.title = "committees | acm at ucsc";
+    document.title = "Committees | ACM at UCSC";
   }, []);
   const communities = [
     { name: "Hacks", short: "hack", color: "#ff9f43", gradient: "linear-gradient(135deg, #ff9f43 0%, #ffc048 100%)", description: "Hackathons", icon: "/hacks.svg", longDescription: "Our Hacks committee organizes exciting hackathons where students can collaborate, innovate, and build amazing projects in a short amount of time. Join us to challenge yourself and meet fellow creators!" },

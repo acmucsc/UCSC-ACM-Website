@@ -7,7 +7,7 @@ import "./Welcome.css";
 
 const Welcome = () => {
   useEffect(() => {
-    document.title = "home | acm at ucsc";
+    document.title = "Home | ACM at UCSC";
   }, []);
   return (
     <div className="welcome-page">

@@ -13,7 +13,7 @@ const Events = () => {
     const [loadingDone, setLoadingDone] = useState(false);
 
     useEffect(() => {
-        document.title = "events | acm at ucsc";
+        document.title = "Events | ACM at UCSC";
         const fetchEvents = async () => {
             // ... existing fetch logic
             try {

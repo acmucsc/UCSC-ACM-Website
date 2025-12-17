@@ -44,7 +44,7 @@ import { useEffect } from 'react';
 
 const About = () => {
   useEffect(() => {
-    document.title = "about | acm at ucsc";
+    document.title = "About | ACM at UCSC";
   }, []);
   const [selectedCommunity, setSelectedCommunity] = useState("Hacks");
 

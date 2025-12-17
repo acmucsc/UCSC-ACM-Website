@@ -3,37 +3,15 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 const Navbar = () => {
-    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
-    const [menu_class, setMenuClass] = useState("menu hidden")
-    const [isMenuClicked, setIsMenuClicked] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Toggle burger menu
-    const updateBurgerMenu = () => {
-        if (!isMenuClicked) {
-            setBurgerClass("burger-bar clicked")
-            setMenuClass("burger-menu visible")
-        }
-        else {
-            setBurgerClass("burger-bar unclicked")
-            setMenuClass("burger-menu hidden")
-        }
-        setIsMenuClicked(!isMenuClicked)
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     }
 
     return (
         <div className="navbar-scope">
             <header className="header-container">
-                {/* Burger menu */}
-                <div className={menu_class}>
-                    <nav className="burger-menu-contents">
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/committees">Committees</Link></li>
-                            <li><Link to="/events">Events</Link></li>
-                        </ul>
-                    </nav>
-                </div>
                 {/* Header */}
                 <div className="header-main">
                     <Link to="/"><div className="header-main-logo">
@@ -42,6 +20,7 @@ const Navbar = () => {
                     </div></Link>
 
                     <div className="header-main-right">
+                        {/* Desktop Nav */}
                         <nav className="desktop-nav">
                             <ul>
                                 <li><Link to="/about">about</Link></li>
@@ -52,13 +31,23 @@ const Navbar = () => {
 
                         <a href="#" className="member-login-btn">member login</a>
 
-                        <div className="mobile-burger-trigger">
-                            <div className="burger-btn-lines" onClick={updateBurgerMenu}>
-                                <div className={burger_class}></div>
-                                <div className={burger_class}></div>
-                                <div className={burger_class}></div>
-                            </div>
+                        {/* Mobile Menu Trigger */}
+                        <div className="menu-trigger" onClick={toggleMenu}>
+                            <div className="menu-icon-bar"></div>
+                            <div className="menu-icon-bar"></div>
+                            <div className="menu-icon-bar"></div>
                         </div>
+
+                        {/* Dropdown Menu */}
+                        {isMenuOpen && (
+                            <div className="dropdown-menu">
+                                <ul>
+                                    <li><Link to="/about" onClick={toggleMenu}>about</Link></li>
+                                    <li><Link to="/committees" onClick={toggleMenu}>committees</Link></li>
+                                    <li><Link to="/events" onClick={toggleMenu}>events</Link></li>
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>

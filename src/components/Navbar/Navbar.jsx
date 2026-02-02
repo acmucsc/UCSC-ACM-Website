@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import './Navbar.css'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logout } = useAuth();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -29,7 +31,13 @@ const Navbar = () => {
                             </ul>
                         </nav>
 
-                        <a href="#" className="member-login-btn">member login</a>
+                        {user ? (
+                            <Link to="/profile" className="member-login-btn">
+                                {user.name.split(' ')[0]}'s Profile
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="member-login-btn">member login</Link>
+                        )}
 
                         {/* Mobile Menu Trigger */}
                         <div className="menu-trigger" onClick={toggleMenu}>
@@ -45,6 +53,11 @@ const Navbar = () => {
                                     <li><Link to="/about" onClick={toggleMenu}>about</Link></li>
                                     <li><Link to="/committees" onClick={toggleMenu}>committees</Link></li>
                                     <li><Link to="/events" onClick={toggleMenu}>events</Link></li>
+                                    {user ? (
+                                        <li><Link to="/profile" onClick={toggleMenu}>profile</Link></li>
+                                    ) : (
+                                        <li><Link to="/login" onClick={toggleMenu}>member login</Link></li>
+                                    )}
                                 </ul>
                             </div>
                         )}
